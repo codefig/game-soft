@@ -9,7 +9,7 @@
 
   <!--Favicon-->
   <link rel="icon" href="img/favicon.png" />
-  
+
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link href="css/style.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row w-100">
         <div class="col-md-12">
-          <a href="index.html" class="brand-logo">
+          <a href="{{ route('index') }}" class="brand-logo">
             <img src="img/logo.svg" alt="IQ Game">
           </a>
           <div class="button_container" id="toggle">
@@ -39,9 +39,9 @@
             <span class="bottom"></span>
           </div>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard-index.html" class="active">Dashboard</a></li>
-            <li><a href="index.html" class="btn btn-transparent">Log out</a></li>
+            <li><a href="{{ route('index') }}">Home</a></li>
+            <li><a href="{{ route('dashboard') }}" class="active">Dashboard</a></li>
+            <li><a href="{{ route('dashboard') }}" class="btn btn-transparent">Log out</a></li>
           </ul>
         </div>
       </div>
@@ -70,10 +70,10 @@
         <div class="divider"></div>
         <div class="dashboard-list">
           <ul>
-            <li><a href="categories.html"><img src="img/dashboard/categories.svg" />Categories</a></li>
-            <li><a href="notifications.html" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-            <li><a href="referrals.html"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
-            <li><a href="index.html" class="btn btn-transparent">Log out</a></li>
+            <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
+            <li><a href="{{ route('notifications') }}" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
+            <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+            <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
           </ul>
         </div>
       </nav>
@@ -101,9 +101,9 @@
       <div class="divider"></div>
       <div class="dashboard-list">
         <ul>
-          <li><a href="categories.html"><img src="img/dashboard/categories.svg" />Categories</a></li>
-          <li><a href="notifications.html" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-          <li><a href="referrals.html"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+          <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
+          <li><a href="{{ route('notifications') }}" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
+          <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
         </ul>
       </div>
     </div>
@@ -183,7 +183,7 @@
       </footer>
     </div>
   </section>
-  
+
 
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>

@@ -9,7 +9,7 @@
 
   <!--Favicon-->
   <link rel="icon" href="img/favicon.png" />
-  
+
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link href="css/style.css" rel="stylesheet">
@@ -388,7 +388,7 @@
       </footer>
     </div>
   </section>
-  
+
 
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>

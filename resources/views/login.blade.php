@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </form>
-                    <a href="dashboard-index.html" class="btn btn-lg btn-primary-i login">Login</a>
+                    <a href="{{ route('dashboard') }}" class="btn btn-lg btn-primary-i login">Login</a>
                     <div class="d-flex justify-content-between">
                         <div class="checkbox">
                             <label><input type="checkbox" value="">Remember me</label>

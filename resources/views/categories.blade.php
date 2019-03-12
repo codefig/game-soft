@@ -9,7 +9,7 @@
 
   <!--Favicon-->
   <link rel="icon" href="img/favicon.png" />
-  
+
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link href="css/style.css" rel="stylesheet">
@@ -26,58 +26,87 @@
 </head>
 
 <body>
-  <nav class="custom-nav fixed-top">
-    <div class="container">
-      <div class="row w-100">
-        <div class="col-md-12">
-          <a href="index.html" class="brand-logo">
-            <img src="img/logo.svg" alt="IQ Game">
-          </a>
-          <div class="button_container" id="toggle">
-            <span class="top"></span>
-            <span class="middle"></span>
-            <span class="bottom"></span>
-          </div>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard-index.html" class="active">Dashboard</a></li>
-            <li><a href="index.html" class="btn btn-transparent">Log out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="overlay-navbar" id="overlay">
-      <nav class="overlay-menu">
-        <div class="user-info">
-          <img src="img/user-image.jpg" alt="User Name">
-          <div>
-            <h4>Samantha David</h4>
-            <div class="amount-in-account">
-              <span>&#8358;500</span>
-            </div>
-          </div>
-        </div>
-        <div class="dashboard-activity">
-          <a href="#" class="btn btn-primary-i">Activate Dashboard</a>
-          <a href="#" class="btn btn-primary withdraw">Withdraw</a>
-        </div>
-        <div class="divider"></div>
-        <div class="dashboard-link d-flex my-3">
-          <input type="text" class="form-control mb-0" value="https://www.prothemesgame.coom/samantha-david0098acd3" />
-          <a class="btn btn-primary-i">Copy</a>
-        </div>
-        <div class="divider"></div>
-        <div class="dashboard-list">
-          <ul>
-            <li><a href="categories.html" class="active"><img src="img/dashboard/categories.svg" />Categories</a></li>
-            <li><a href="notifications.html"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-            <li><a href="referrals.html"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
-            <li><a href="index.html" class="btn btn-transparent">Log out</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+        <nav class="custom-nav fixed-top">
+                <div class="container">
+                  <div class="row w-100">
+                    <div class="col-md-12">
+                      <a href="{{ route('index') }}" class="brand-logo">
+                        <img src="img/logo.svg" alt="IQ Game">
+                      </a>
+                      <div class="button_container" id="toggle">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                      </div>
+                      <ul>
+                        <li><a href="{{ route('index') }}">Home</a></li>
+                        <li><a href="{{ route('dashboard') }}" class="active">Dashboard</a></li>
+                        <li><a href="{{ route('dashboard') }}" class="btn btn-transparent">Log out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <div class="overlay-navbar" id="overlay">
+                  <nav class="overlay-menu">
+                    <div class="user-info">
+                      <img src="img/user-image.jpg" alt="User Name">
+                      <div>
+                        <h4>Samantha David</h4>
+                        <div class="amount-in-account">
+                          <span>&#8358;500</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dashboard-activity">
+                      <a href="#" class="btn btn-primary-i">Activate Dashboard</a>
+                      <a href="#" class="btn btn-primary withdraw">Withdraw</a>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="dashboard-link d-flex my-3">
+                      <input type="text" class="form-control mb-0" value="https://www.prothemesgame.coom/samantha-david0098acd3" />
+                      <a class="btn btn-primary-i">Copy</a>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="dashboard-list">
+                      <ul>
+                        <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
+                        <li><a href="{{ route('notifications') }}" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
+                        <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+                        <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              <section class="dashboard">
+                <div class="dashboard-sidenav">
+                  <div class="user-info">
+                    <img src="img/user-image.jpg" alt="User Name">
+                    <div>
+                      <h4>Samantha David</h4>
+                      <div class="amount-in-account">
+                        <span>&#8358;500</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dashboard-activity">
+                    <a href="#" class="btn btn-primary-i">Activate Dashboard</a>
+                    <a href="#" class="btn btn-primary withdraw">Withdraw</a>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="dashboard-link d-flex my-3">
+                    <input type="text" class="form-control mb-0" value="https://www.prothemesgame.coom/samantha-david0098acd3" />
+                    <a class="btn btn-primary-i">Copy</a>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="dashboard-list">
+                    <ul>
+                      <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
+                      <li><a href="{{ route('notifications') }}" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
+                      <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+                    </ul>
+                  </div>
+                </div>
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">
@@ -298,7 +327,7 @@
       </footer>
     </div>
   </section>
-  
+
 
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
