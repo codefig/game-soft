@@ -14,40 +14,40 @@
 </head>
 
 <body>
-  <nav class="custom-nav fixed-top">
-    <div class="container">
-      <div class="row w-100">
-        <div class="col-md-12">
-          <a href="index.html" class="brand-logo">
-            <img src="img/logo.svg" alt="IQ Game">
-          </a>
-          <div class="button_container" id="toggle">
-            <span class="top"></span>
-            <span class="middle"></span>
-            <span class="bottom"></span>
-          </div>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="faq.html">Faq</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-            <li><a href="login.html" class="btn btn-transparent">Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="overlay-navbar" id="overlay">
-    <nav class="overlay-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="faq.html">Faq</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html" class="btn btn-transparent">Login</a></li>
-      </ul>
-    </nav>
-  </div>
+        <nav class="custom-nav fixed-top">
+                <div class="container">
+                  <div class="row w-100">
+                    <div class="col-md-12">
+                      <a href="{{ route('index') }}" class="brand-logo">
+                        <img src="img/logo.svg" alt="IQ Game">
+                      </a>
+                      <div class="button_container" id="toggle">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                      </div>
+                      <ul>
+                        <li><a href=""{{ route('index') }} class="active">Home</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('faq') }}">Faq</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
+                        <li><a href="{{ route('login') }}" class="btn btn-transparent">Login</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <div class="overlay-navbar" id="overlay">
+                <nav class="overlay-menu">
+                  <ul>
+                    <li><a href="{{ route('index') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('faq') }}">Faq</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('login') }}" class="btn btn-transparent">Login</a></li>
+                  </ul>
+                </nav>
+              </div>
   <header class="other-pages">
     <div class="container h-100">
       <div class="row">
@@ -58,7 +58,7 @@
             </div>
             <div class="about-header-image">
               <img src="img/contact-us-illustration.jpg" alt=""/>
-            </div> 
+            </div>
           </div>
         </div>
     </div>
