@@ -81,7 +81,7 @@
                     </form>
                     <a href="#" class="btn btn-lg btn-primary-i">Register</a>
                     <div class="divider"></div>
-                    <p class="text-center">Already a member? <a href="login.html" class="register">Login</a></p>
+                    <p class="text-center">Already a member? <a href="{{ route('login') }}" class="register">Login</a></p>
                 </div>
             </div>
         </div>

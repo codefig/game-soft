@@ -77,7 +77,7 @@
                         <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
                     <div class="divider"></div>
-                    <a href="register.html" class="register">Register now</a>
+                    <a href="{{ route('register') }}" class="register">Register now</a>
                 </div>
             </div>
         </div>
