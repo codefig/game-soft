@@ -29,7 +29,7 @@
     <div class="container">
       <div class="row w-100">
         <div class="col-md-12">
-          <a href="index.html" class="brand-logo">
+          <a href="{{ route('index') }}" class="brand-logo">
             <img src="img/logo.svg" alt="IQ Game">
           </a>
           <div class="button_container" id="toggle">
@@ -38,9 +38,9 @@
             <span class="bottom"></span>
           </div>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard-index.html" class="active">Dashboard</a></li>
-            <li><a href="index.html" class="btn btn-transparent">Log out</a></li>
+            <li><a href="{{ route('index') }}">Home</a></li>
+            <li><a href="{{ route('dashboard') }}" class="active">Dashboard</a></li>
+            <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
           </ul>
         </div>
       </div>
@@ -69,10 +69,10 @@
         <div class="divider"></div>
         <div class="dashboard-list">
           <ul>
-            <li><a href="categories.html"><img src="img/dashboard/categories.svg" />Categories</a></li>
-            <li><a href="notifications.html"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-            <li><a href="referrals.html"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
-            <li><a href="index.html" class="btn btn-transparent">Log out</a></li>
+            <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
+            <li><a href="{{ route('notifications') }}"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
+            <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+            <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
           </ul>
         </div>
       </nav>
@@ -100,9 +100,9 @@
       <div class="divider"></div>
       <div class="dashboard-list">
         <ul>
-          <li><a href="categories.html"><img src="img/dashboard/categories.svg" />Categories</a></li>
-          <li><a href="notifications.html"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-          <li><a href="referrals.html"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+          <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
+          <li><a href="{{ route('notifications') }}"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
+          <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
         </ul>
       </div>
     </div>
@@ -112,7 +112,7 @@
           <div class="custom-card category">
             <div class="category-title">
               <h2>Music</h2>
-              <a href="category-stage.html"><img src="img/dashboard/play.svg" /></a>
+              <a href="{{ route('stages') }}"><img src="img/dashboard/play.svg" /></a>
             </div>
             <div class="category-details">
               <table class="table">
@@ -167,7 +167,7 @@
           <div class="custom-card category">
             <div class="category-title">
               <h2>Sports</h2>
-              <a href="category-stage.html"><img src="img/dashboard/play.svg" /></a>
+              <a href="{{ route('stages') }}"><img src="img/dashboard/play.svg" /></a>
             </div>
             <div class="category-details">
               <table class="table">
@@ -222,7 +222,7 @@
           <div class="custom-card category">
             <div class="category-title">
               <h2>IQ Basic</h2>
-              <a href="category-stage.html"><img/dashboard/play.svg" /></a>
+              <a href="{{ route('stages') }}"><img/dashboard/play.svg" /></a>
             </div>
             <div class="category-details">
               <table class="table">
