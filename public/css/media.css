@@ -1,0 +1,152 @@
+@media only screen and (min-width: 1440px){
+  .container {
+    max-width: 1260px;
+  }
+}
+
+@media only screen and (min-width: 1367) {
+  .overlay-navbar {
+      display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1140px) {
+  .category-details {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  nav.custom-nav ul {
+    display: none !important;
+  }
+  .button_container {
+    display: block;
+  }
+  .dashboard-sidenav {
+    display: none;
+  }
+  .dashboard-content {
+    width: 100%;
+    left: 0;
+  }
+  .user-info {
+    justify-content: center;
+  }
+  .user-info img {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .homepage-header .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .homepage-header > .row {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .homepage-header {
+    padding: 150px 50px;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  header {
+    height: auto !important;
+  }
+  header.other-pages {
+    height: 60vh !important;
+  }
+  header.login, header.signup {
+    height: 120px !important;
+  }
+  .homepage-illustration {
+    margin-bottom: 20px;
+  }
+  .referral-steps {
+    margin-right: 0 !important;
+  }
+  .dashboard-sidenav {
+    left: -35%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html, body {
+    font-size: 15px !important;
+  }
+  .c-padding {
+    padding: 0 50px !important;
+  }
+  .homepage-header {
+    background-image: none !important;
+    padding: 120px 30px 80px;
+  }
+  .header-text--stroke {
+    display: none !important;
+  }
+  .overlay-navbar {
+    width: 100%;
+  } 
+  section {
+    padding: 60px 15px !important;
+  }
+  .referral-content h2 {
+    margin: 30px 20px;
+    text-align: center
+  }
+  .referral-illustration {
+    height: 300px;
+  }
+  footer h2 {
+    text-align: center !important;
+  }
+  footer {
+    padding-bottom: 30px !important;
+  }
+  .subscribe {
+    margin-top: -20px !important;
+  }
+  .other-pages > div > div > div {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-cta > div > div > div {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-cta h4 {
+    margin-bottom: 20px;
+  }
+  .faq-pointers {
+    display: none;
+  }
+  .faq ul li {
+    padding: 15px;
+  }
+  .faq li .answer {
+    height: 90%;
+  }
+  .notifications .custom-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 481px){
+  html, body {
+    font-size: 14px !important;
+  }
+  .c-padding {
+    padding: 0 20px !important;
+  }
+  .dashboard-content {
+    padding: 50px 20px;
+  }
+  .test .custom-card {
+    padding: 15px;
+  }
+}
+
