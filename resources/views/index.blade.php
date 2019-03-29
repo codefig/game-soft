@@ -35,7 +35,7 @@
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('faq') }}">Faq</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
-            <li><a href="{{ route('login') }}" class="btn btn-transparent">Logins</a></li>
+            <li><a href="{{ route('login') }}" class="btn btn-transparent">Login</a></li>
           </ul>
         </div>
       </div>
