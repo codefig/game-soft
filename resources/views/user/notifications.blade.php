@@ -31,7 +31,7 @@
       <div class="row w-100">
         <div class="col-md-12">
           <a href="{{ route('index') }}" class="brand-logo">
-            <img src="img/logo.svg" alt="IQ Game">
+            <img src={{URL::to("img/logo.svg")}} alt="IQ Game">
           </a>
           <div class="button_container" id="toggle">
             <span class="top"></span>
@@ -50,7 +50,7 @@
   <div class="overlay-navbar" id="overlay">
       <nav class="overlay-menu">
         <div class="user-info">
-          <img src="img/user-image.jpg" alt="User Name">
+          <img src={{URL::to("img/user-image.jpg")}} alt="User Name">
           <div>
             <h4>Samantha David</h4>
             <div class="amount-in-account">
@@ -70,9 +70,9 @@
         <div class="divider"></div>
         <div class="dashboard-list">
           <ul>
-            <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
-            <li><a href="{{ route('notifications') }}" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-            <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+            <li><a href="{{ route('categories') }}"><img src={{URL::to("img/dashboard/categories.svg")}} />Categories</a></li>
+            <li><a href="{{ route('notifications') }}" class="active"><img src={{URL::to("img/dashboard/notifications.svg")}} /><span class="notifications">5</span>Notifications</a></li>
+            <li><a href="{{ route('referrals') }}"><img src={{URL::to("img/dashboard/referrals.svg")}} />Referrals</a></li>
             <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
           </ul>
         </div>
@@ -81,7 +81,7 @@
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">
-        <img src="img/user-image.jpg" alt="User Name">
+        <img src=src={{ URL::to("img/user-image.jpg")}} alt="User Name">
         <div>
           <h4>Samantha David</h4>
           <div class="amount-in-account">
@@ -101,9 +101,9 @@
       <div class="divider"></div>
       <div class="dashboard-list">
         <ul>
-          <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
-          <li><a href="{{ route('notifications') }}" class="active"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-          <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+          <li><a href="{{ route('categories') }}"><img src={{ URL::to("img/dashboard/categories.svg") }} />Categories</a></li>
+          <li><a href="{{ route('notifications') }}" class="active"><img src={{ URL::to("img/dashboard/notifications.svg") }} /><span class="notifications">5</span>Notifications</a></li>
+          <li><a href="{{ route('referrals') }}"><img src={{ URL::to("img/dashboard/referrals.svg") }} />Referrals</a></li>
         </ul>
       </div>
     </div>
@@ -166,16 +166,16 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
               <div class="support">
-                <img src="img/envelope.svg" alt>
+                <img src={{ URL::to("img/envelope.svg") }} alt>
                 <p>support@gamesoft.com</p>
               </div>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
               <div class="social-media-icons">
-                <img src="img/facebook.svg" alt>
-                <img src="img/google-plus.svg" alt>
-                <img src="img/youtube.svg" alt>
-                <img src="img/twitter.svg" alt>
+                <img src={{ URL::to("img/facebook.svg") }} alt>
+                <img src={{ URL::to("img/google-plus.svg") }} alt>
+                <img src={{ URL::to("img/youtube.svg") }} alt>
+                <img src={{ URL::to("img/twitter.svg") }} alt>
               </div>
             </div>
           </div>
@@ -185,9 +185,11 @@
   </section>
 
 
-  <script src="js/jquery-3.3.1.js"></script>
-  <script src="js/bootstrap.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
+  <script src={{ URL::to("js/jquery-3.3.1.js") }}></script>
+  <script src={{ URL::to("js/bootstrap.min.js") }} type="text/javascript"></script>
+  <script src={{ URL::to("js/scripts.js") }} type="text/javascript"></script>
+
+  <script>
     $('.button_container').click(function () {
       $(this).toggleClass('active');
       $('#overlay').toggleClass('open');
