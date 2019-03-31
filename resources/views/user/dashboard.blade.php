@@ -8,12 +8,12 @@
   <title>Dashboard | IQ Game</title>
 
   <!--Favicon-->
-  <link rel="icon" href="img/favicon.png" />
+  <link rel="icon" href={{ URL::to("img/favicon.png")}}/>
 
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/media.css" rel="stylesheet">
+  <link rel="stylesheet" href={{ URL::to("css/bootstrap.min.css") }} />
+  <link href={{ URL::to("css/style.css") }} rel="stylesheet">
+  <link href={{ URL::to("css/media.css") }} rel="stylesheet">
 
   <style type="text/css">
     footer {
@@ -30,7 +30,7 @@
       <div class="row w-100">
         <div class="col-md-12">
           <a href="{{ route('index') }}" class="brand-logo">
-            <img src="img/logo.svg" alt="IQ Game">
+            <img src={{ URL::to("img/logo.svg")}} alt="IQ Game">
           </a>
           <div class="button_container" id="toggle">
             <span class="top"></span>
@@ -49,7 +49,7 @@
   <div class="overlay-navbar" id="overlay">
       <nav class="overlay-menu">
         <div class="user-info">
-          <img src="img/user-image.jpg" alt="User Name">
+          <img src={{ URL::to("img/user-image.jpg")}} alt="User Name">
           <div>
             <h4>Samantha David</h4>
             <div class="amount-in-account">
@@ -69,9 +69,9 @@
         <div class="divider"></div>
         <div class="dashboard-list">
           <ul>
-            <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
-            <li><a href="{{ route('notifications') }}"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-            <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+            <li><a href="{{ route('categories') }}"><img src={{ URL::to("img/dashboard/categories.svg")}} />Categories</a></li>
+            <li><a href="{{ route('notifications') }}"><img src={{ URL::to("img/dashboard/notifications.svg")}} /><span class="notifications">5</span>Notifications</a></li>
+            <li><a href="{{ route('referrals') }}"><img src={{ URL::to("img/dashboard/referrals.svg")}} />Referrals</a></li>
             <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
           </ul>
         </div>
@@ -80,7 +80,7 @@
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">
-        <img src="img/user-image.jpg" alt="User Name">
+        <img src={{ URL::to("img/user-image.jpg")}} alt="User Name">
         <div>
           <h4>Samantha David</h4>
           <div class="amount-in-account">
@@ -100,9 +100,9 @@
       <div class="divider"></div>
       <div class="dashboard-list">
         <ul>
-          <li><a href="{{ route('categories') }}"><img src="img/dashboard/categories.svg" />Categories</a></li>
-          <li><a href="{{ route('notifications') }}"><img src="img/dashboard/notifications.svg" /><span class="notifications">5</span>Notifications</a></li>
-          <li><a href="{{ route('referrals') }}"><img src="img/dashboard/referrals.svg" />Referrals</a></li>
+          <li><a href="{{ route('categories') }}"><img src={{ URL::to("img/dashboard/categories.svg")}} />Categories</a></li>
+          <li><a href="{{ route('notifications') }}"><img src={{ URL::to("img/dashboard/notifications.svg")}} /><span class="notifications">5</span>Notifications</a></li>
+          <li><a href="{{ route('referrals') }}"><img src={{ URL::to("img/dashboard/referrals.svg")}} />Referrals</a></li>
         </ul>
       </div>
     </div>
@@ -112,7 +112,7 @@
           <div class="custom-card category">
             <div class="category-title">
               <h2>Music</h2>
-              <a href="{{ route('stages') }}"><img src="img/dashboard/play.svg" /></a>
+              <a href="{{ route('stages') }}"><img src={{ URL::to("img/dashboard/play.svg")}} /></a>
             </div>
             <div class="category-details">
               <table class="table">
@@ -126,17 +126,17 @@
                 <tbody>
                   <tr>
                     <th scope="row"><span>1</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                   <tr>
                     <th scope="row"><span>2</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                   <tr>
                     <th scope="row"><span>3</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                 </tbody>
@@ -147,10 +147,10 @@
                   <p>130</p>
                 </div>
                 <div class="rating">
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
                 </div>
               </div>
             </div>
@@ -167,7 +167,7 @@
           <div class="custom-card category">
             <div class="category-title">
               <h2>Sports</h2>
-              <a href="{{ route('stages') }}"><img src="img/dashboard/play.svg" /></a>
+              <a href="{{ route('stages') }}"><img src={{ URL::to("img/dashboard/play.svg")}} /></a>
             </div>
             <div class="category-details">
               <table class="table">
@@ -181,12 +181,12 @@
                 <tbody>
                   <tr>
                     <th scope="row"><span>1</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                   <tr>
                     <th scope="row"><span>2</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                   <tr>
@@ -202,10 +202,10 @@
                   <p>130</p>
                 </div>
                 <div class="rating">
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
                 </div>
               </div>
             </div>
@@ -222,7 +222,7 @@
           <div class="custom-card category">
             <div class="category-title">
               <h2>IQ Basic</h2>
-              <a href="{{ route('stages') }}"><img/dashboard/play.svg" /></a>
+              <a href="{{ route('stages') }}"><img/dashboard/play.svg")}} /></a>
             </div>
             <div class="category-details">
               <table class="table">
@@ -236,17 +236,17 @@
                 <tbody>
                   <tr>
                     <th scope="row"><span>1</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                   <tr>
                     <th scope="row"><span>2</span></th>
-                    <td><img src="img/dashboard/completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                   <tr>
                     <th scope="row"><span>3</span></th>
-                    <td><img src="img/dashboard/not-completed.svg" /></td>
+                    <td><img src={{ URL::to("img/dashboard/not-completed.svg")}} /></td>
                     <td>46</td>
                   </tr>
                 </tbody>
@@ -257,8 +257,8 @@
                   <p>130</p>
                 </div>
                 <div class="rating">
-                  <img src="img/dashboard/star.svg" />
-                  <img src="img/dashboard/star.svg" />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
+                  <img src={{ URL::to("img/dashboard/star.svg")}} />
                 </div>
               </div>
             </div>
@@ -299,19 +299,19 @@
               <div class="custom-card transactions">
                 <h4 class="mb-3">Activity</h4>
                 <div class="transaction">
-                  <img src="img/dashboard/withdrawal.svg">
+                  <img src={{ URL::to("img/dashboard/withdrawal.svg")}}>
                   <p>Requested a withdrawal of &#8358; 3850</p>
                 </div>
                 <div class="transaction">
-                  <img src="img/dashboard/wins.svg">
+                  <img src={{ URL::to("img/dashboard/wins.svg")}}>
                   <p>Make a deposit of &#8358; 5600</p>
                 </div>
                 <div class="transaction">
-                  <img src="img/dashboard/withdrawal.svg">
+                  <img src={{ URL::to("img/dashboard/withdrawal.svg")}}>
                   <p>Requested a withdrawal of &#8358; 1200</p>
                 </div>
                 <div class="transaction">
-                  <img src="img/dashboard/withdrawal.svg">
+                  <img src={{ URL::to("img/dashboard/withdrawal.svg")}}>
                   <p>Requested a withdrawal of &#8358; 100</p>
                 </div>
               </div>
@@ -371,16 +371,16 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
               <div class="support">
-                <img src="img/envelope.svg" alt>
+                <img src={{ URL::to("img/envelope.svg")}} alt>
                 <p>support@gamesoft.com</p>
               </div>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
               <div class="social-media-icons">
-                <img src="img/facebook.svg" alt>
-                <img src="img/google-plus.svg" alt>
-                <img src="img/youtube.svg" alt>
-                <img src="img/twitter.svg" alt>
+                <img src={{ URL::to("img/facebook.svg")}} alt>
+                <img src={{ URL::to("img/google-plus.svg")}} alt>
+                <img src={{ URL::to("img/youtube.svg")}} alt>
+                <img src={{ URL::to("img/twitter.svg")}} alt>
               </div>
             </div>
           </div>
@@ -390,9 +390,9 @@
   </section>
 
 
-  <script src="js/jquery-3.3.1.js"></script>
-  <script src="js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="js/scripts.js" type="text/javascript"></script>
+  <script src={{ URL::to("js/jquery-3.3.1.js") }}></script>
+  <script src={{ URL::to("js/bootstrap.min.js") }} type="text/javascript"></script>
+  <script src={{ URL::to("js/scripts.js") }} type="text/javascript"></script>
   <script type="text/javascript">
     $('.button_container').click(function () {
       $(this).toggleClass('active');
