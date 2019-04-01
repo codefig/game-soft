@@ -11,6 +11,6 @@ class AdminController extends Controller
     }
 
     public function showLogin(){
-        return "This is the login form ";
+        return "This returns the login form view ";
     }
 }
