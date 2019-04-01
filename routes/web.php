@@ -68,3 +68,15 @@ Route::group(['prefix' => 'user/'], function () {
 });
 
 
+//Admin Routes
+
+
+Route::group(['prefix' => 'admin/'], function() {
+    Route::get('login', function(){
+        return view('admin.login');
+    });
+
+    Route::get('home', function(){
+        return view('admin.blank');
+    });
+});
