@@ -245,10 +245,10 @@
     <div class="container h-100 d-flex justify-content-center flex-column">
       <div class="row mb-5">
         <div class="col-lg-8 mx-auto">
-          <div class="subscribe">
+        <form action="" class="subscribe">
             <input type="email" name="email" placeholder="yourmail@example.com">
             <button type="submit">Subscribe</button>
-          </div>
+          </form>
         </div>
       </div>
       <div class="row">

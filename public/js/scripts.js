@@ -1,5 +1,5 @@
 /* Test Closure Countdown */
-var testClosureDate = new Date("Mar 23, 2019 15:37:25").getTime();
+var testClosureDate = new Date("Apr 23, 2019 15:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -31,7 +31,7 @@ var x = setInterval(function() {
 
 
 /* Test Opening Countdown */
-var testOpeningDate = new Date("Mar 15, 2019 12:03:25").getTime();
+var testOpeningDate = new Date("Apr 15, 2019 12:03:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -60,3 +60,20 @@ var x = setInterval(function() {
         document.querySelector(".coutndown").innerHTML = "Test is now open";
     }
 }, 1000);
+
+//Remove alert 
+setTimeout(() => {
+    document.querySelector('.alert').classList.add('fadeOut');
+    document.querySelector('.alert').style.display = 'none';
+}, 5000);
+
+//Copy Link In Dashboard
+function copyLink() {
+    console.log('Copied');
+    var copyLink = document.querySelectorAll(".user-link");
+    copyLink.forEach(element => {
+        element.select();
+        document.execCommand("copy"); 
+    });
+  }
+  

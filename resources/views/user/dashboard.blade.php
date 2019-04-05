@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <nav class="custom-nav fixed-top">
+  <nav class="dashboard-nav custom-nav fixed-top">
     <div class="container">
       <div class="row w-100">
         <div class="col-md-12">
@@ -77,6 +77,9 @@
         </div>
       </nav>
     </div>
+    <div class="alert alert-success" role="alert">
+        <p>Successfully logged in</p>
+      </div>
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">

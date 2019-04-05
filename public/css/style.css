@@ -14,6 +14,11 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+::selection {
+  background: #717EF8;
+  color: rgba(0,0,0,0.7);
+}
+
 input, input:focus, textarea, textarea:focus {
   outline: none!important;
   box-shadow: none!important;
@@ -171,9 +176,10 @@ nav.custom-nav li a.active {
 
 .button_container {
   position: fixed;
-  right: 7%;
-  height: 27px;
-  width: 35px;
+  right: 5%;
+  height: 18px;
+  width: 26px;
+  margin-left: 30px;
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;
@@ -204,10 +210,10 @@ nav.custom-nav li a.active {
 .button_container span {
   background: #fff;
   border: none;
-  height: 3px;
+  height: 2px;
   width: 100%;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   transition: all .35s ease;
   cursor: pointer;
@@ -218,13 +224,16 @@ nav.custom-nav li a.active {
 }
 
 .button_container span:nth-of-type(2) {
-  top: 10px;
+  top: 8px;
 }
 
 .button_container span:nth-of-type(3) {
-  top: 20px;
+  top: 16px;
 }
 
+.button_container.active span:nth-of-type(3) {
+  top: 20px
+}
 .overlay-navbar {
   position: fixed;
   right: 0;
@@ -904,7 +913,6 @@ p.intro-paragraph {
 
 input, textarea {
   border-color: rgba(78, 95, 251, 0.3) !important;
-  margin-bottom: 10px !important;
 }
 
 input:focus, textarea:focus {
@@ -933,7 +941,7 @@ header.login  {
 
 .login-form {
   background: #f0f0f0;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 .login-form .custom-card {
@@ -1027,6 +1035,30 @@ header.login  {
   padding-top: 50px;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+}
+
+.dashboard-sidenav::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+.dashboard-sidenav::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+.dashboard-sidenav::-webkit-scrollbar-thumb {
+  background: #182388; 
+}
+
+/* Handle on hover */
+.dashboard-sidenav::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.dashboard-nav + .overlay-navbar > .overlay-menu {
+  overflow-y: scroll
 }
 
 .user-info {
@@ -1528,4 +1560,53 @@ span.option {
 
 .referrals .custom-card.small h4 {
   font-size: 1.5rem;
+}
+
+input.error {
+  border: 1px solid red !important;
+}
+
+.error-message {
+  display: none;
+}
+
+input.error + .error-message {
+  color: red !important;
+  font-size: 12px;
+  display: block !important;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.alert {
+  position: absolute;
+  top: 110px;
+  right: 20px;
+  z-index: 1;
+  padding: 15px 30px;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
 }

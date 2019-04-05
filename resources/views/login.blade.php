@@ -63,9 +63,11 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <input placeholder="Email" type="email" id="email" class="form-control" />
+                                <p class="error-message">Your email isn't valid</p>
                             </div>
                             <div class="col-md-12 form-group">
                                 <input placeholder="Password" type="password" id="password" class="form-control" />
+                                <p class="error-message">Your password isn't valid</p>
                             </div>
                         </div>
                     </form>
