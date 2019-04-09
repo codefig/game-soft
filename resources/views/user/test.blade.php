@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav class="custom-nav fixed-top">
+    <nav class="dashboard-nav custom-nav fixed-top">
         <div class="container">
             <div class="row w-100">
                 <div class="col-md-12">
