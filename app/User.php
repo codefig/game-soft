@@ -19,7 +19,17 @@ class User extends Authenticatable
     protected $guard = 'user';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname',
+        'lastname',
+        'email',
+        'verification_token',
+        'picture',
+        'referral_count',
+        'referral_bouns',
+        'quiz_funds',
+        'withdrawals',
+        'email_verified_at',
+        'password',
     ];
 
     /**
