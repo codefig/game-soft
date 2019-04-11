@@ -17,7 +17,6 @@ Route::get('/', function () {
 //Main routes
 Route::group(['prefix' => '/'], function () {
 
-
     Route::get('about', function () {
         return view('about');
     })->name('about');
