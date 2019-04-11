@@ -13,4 +13,8 @@ class UserController extends Controller
     {
         $this->middleware('auth:user');
     }
+
+    public function showHome(){
+        return "this is the user home function";
+    }
 }
