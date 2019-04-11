@@ -71,7 +71,7 @@ Route::group(['prefix' => 'user/'], function () {
 
 
 Route::group(['prefix' => 'admin/'], function() {
-    Route::post('login', 'AdminController@postLoginForm')->name('admin.postlogin');
+    Route::post('login', 'AdminController@postLoginForm')->name('admin.login.submit');
     Route::get('login', 'AdminController@showLoginForm')->name('admin.login');
 
     Route::get('home', 'Auth\AdminController@showHome')->name('admin.home');

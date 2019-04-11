@@ -12,11 +12,11 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:admin')->except('logout');
     }
 
     public function showHome(){
-        return view('admin.index');
+        return view('admin.home');
     }
 
     public function logout(){

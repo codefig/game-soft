@@ -21,10 +21,9 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
 
-
-        // Auth::attempt(['email' => $email, 'password' => $password])
         if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])){
-            redirect()->route('admin.home');
+            return redirect()->route('admin.home');
+
         }else{
             return back()->withInput($request->only('email'));
         }
