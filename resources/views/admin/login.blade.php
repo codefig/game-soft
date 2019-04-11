@@ -31,13 +31,13 @@
           <form method="post" action="{{ route('admin.postlogin') }}">
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
                 <label for="inputEmail">Email address</label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
                 <label for="inputPassword">Password</label>
               </div>
             </div>

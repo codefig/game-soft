@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -15,6 +16,12 @@ class AdminController extends Controller
     }
 
     public function showHome(){
-        return "this is the home view function";
+        return view('admin.index');
+    }
+
+    public function logout(){
+
+        Auth::logout();
+        return redirect()->route('admin.login');
     }
 }
