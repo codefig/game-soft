@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>ADd Sessions</title>
+  <title>View Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -162,39 +162,49 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Blank Page</h1>
+        <h1>All Categories</h1>
         <hr>
+        <p>This is a great starting point for new custom pages.</p>
 
 
         <div class="container bodycontainer">
-            <form method="post" action="">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
 
-            <div class="form-group">
-                <label> Name </label>
-                <input type="text" class="form-control" id="name" placeholder="Session Name" />
-            </div>
-
-            <div class="form-group">
-                <label>Duration</label>
-                <input type="datetime-local" class="form-control" id="duration" placeholder="37minutes" />
-            </div>
-
-            <div class="form-group">
-                <label>Status </label>
-                <select name="status" class="form-control">
-                    <option value="0">Inactive </option>
-                    <option value="1">Active </option>
-                    <option value="2">Done </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" name="submitBtn" class="btn btn-primary">Add Session</button>
-            </div>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
 
-      </form>
       </div>
       <!-- /.container-fluid -->
 

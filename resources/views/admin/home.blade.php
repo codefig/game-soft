@@ -127,13 +127,13 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ route('admin.category.create') }}">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Add Category</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ route('admin.category.all') }}">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>View All Categories</span></a>
       </li>

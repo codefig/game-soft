@@ -162,39 +162,31 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Blank Page</h1>
+        <h1>Add Category</h1>
         <hr>
 
 
         <div class="container bodycontainer">
+
             <form method="post" action="">
 
-            <div class="form-group">
-                <label> Name </label>
-                <input type="text" class="form-control" id="name" placeholder="Session Name" />
+                <div class="form-group">
+                    <label> Name </label>
+                    <input type="text" class="form-control" id="name" placeholder="Category Name" />
+                </div>
+
+                <div class="form-group">
+                    <label> Description </label>
+                    <input type='text' class="form-control" id="description" name="description" />
+                </div>
+
+                <div class="form-group">
+                    <input type="hidden" name="_token" value="{{ Session::token() }}" />
+                    <button type="submit" name="submitBtn" class="btn btn-info"> Add Category</button>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label>Duration</label>
-                <input type="datetime-local" class="form-control" id="duration" placeholder="37minutes" />
-            </div>
-
-            <div class="form-group">
-                <label>Status </label>
-                <select name="status" class="form-control">
-                    <option value="0">Inactive </option>
-                    <option value="1">Active </option>
-                    <option value="2">Done </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" name="submitBtn" class="btn btn-primary">Add Session</button>
-            </div>
-        </div>
-
-      </form>
+        </form>
       </div>
       <!-- /.container-fluid -->
 

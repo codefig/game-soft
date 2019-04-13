@@ -80,4 +80,8 @@ Route::group(['prefix' => 'admin/'], function() {
     //Other administrativec functions
     Route::get('sessions/create', 'Auth\AdminController@createSession')->name('admin.session.create');
     Route::get('sessions/all', 'Auth\AdminController@viewAllSession')->name('admin.session.all');
+
+    //Category routes
+    Route::get('category/create', 'Auth\AdminController@createCategory')->name('admin.category.create');
+    Route::get('category/all', 'Auth\AdminController@viewAllCAtegory')->name('admin.category.all');
 });

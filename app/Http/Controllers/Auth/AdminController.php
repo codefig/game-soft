@@ -32,4 +32,12 @@ class AdminController extends Controller
     public function viewAllSession(Request $request){
         return view('admin.showsessions');
     }
+
+    public function createCategory(){
+        return view('admin.add-category');
+    }
+
+    public function viewAllCategory(){
+        return view('admin.showcategories');
+    }
 }
