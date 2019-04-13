@@ -76,4 +76,8 @@ Route::group(['prefix' => 'admin/'], function() {
 
     Route::get('home', 'Auth\AdminController@showHome')->name('admin.home');
     Route::get('logout', 'Auth\AdminController@logout')->name('admin.logout');
+
+    //Other administrativec functions
+    Route::get('sessions/create', 'Auth\AdminController@createSession')->name('admin.session.create');
+    Route::get('sessions/all', 'Auth\AdminController@viewAllSession')->name('admin.session.all');
 });

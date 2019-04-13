@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Blank Page</title>
+  <title>ADd Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -115,13 +115,13 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.session.create') }}">
+        <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Create New Session</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.session.all') }}">
+        <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>View All Sessions</span></a>
       </li>

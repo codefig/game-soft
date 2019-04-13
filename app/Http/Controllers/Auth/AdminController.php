@@ -24,4 +24,12 @@ class AdminController extends Controller
         Auth::logout();
         return redirect()->route('admin.login');
     }
+
+    public function createSession(){
+        return view('admin.add-session');
+    }
+
+    public function viewAllSession(Request $request){
+        return view('admin.showsessions');
+    }
 }
