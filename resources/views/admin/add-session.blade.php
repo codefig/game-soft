@@ -176,7 +176,7 @@
 
             <div class="form-group">
                 <label>Start Time</label>
-                <input type="datetime-local" class="form-control" id="duration" name="start_time" placeholder="37minutes" />
+                <input type="datetime-local" class="form-control" id="duration" name="start_time" placeholder="Date and Time" />
             </div>
 
             <div class="form-group">
@@ -201,7 +201,7 @@
 
       </form>
 
-      <div class='alert alert-danger' style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
+      <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
         @if (count($errors) > 0)
         <div class="alert alert-danger">
           <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -213,6 +213,7 @@
         </div>
         @endif
       </div>
+
 
       <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
           {{ Session::get('success') }}

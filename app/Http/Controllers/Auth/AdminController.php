@@ -46,7 +46,6 @@ class AdminController extends Controller
             $lap->duration = $request->duration;
             $lap->status = $request->status;
             $lap->save();
-            Session::flash('message', "err");
             Session::flash('success', "Test Session created successfully !");
             return redirect()->back();
 
