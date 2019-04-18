@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use App\Lap;
 
 class AdminController extends Controller
 {
@@ -39,12 +40,12 @@ class AdminController extends Controller
             'duration' => 'required',
             'status' => 'required',
         ]);
-            $session = new Session();
-            $session->name = $request->name;
-            $session->start_time = $request->start_time;
-            $session->duration = $request->duration;
-            $session->status = $request->status;
-            $session->save();
+            $lap = new Lap();
+            $lap->name = $request->name;
+            $lap->start_time = $request->start_time;
+            $lap->duration = $request->duration;
+            $lap->status = $request->status;
+            $lap->save();
             Session::flash('message', "err");
             Session::flash('success', "Test Session created successfully !");
             return redirect()->back();
