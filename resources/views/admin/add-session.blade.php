@@ -167,16 +167,21 @@
 
 
         <div class="container bodycontainer">
-            <form method="post" action="">
+            <form method="post" action="{{ route('admin.session.post') }}">
 
             <div class="form-group">
                 <label> Name </label>
-                <input type="text" class="form-control" id="name" placeholder="Session Name" />
+                <input type="text" class="form-control" id="name" name="name" placeholder="Session Name" />
             </div>
 
             <div class="form-group">
-                <label>Duration</label>
-                <input type="datetime-local" class="form-control" id="duration" placeholder="37minutes" />
+                <label>Start Time</label>
+                <input type="datetime-local" class="form-control" id="duration" name="start_time" placeholder="37minutes" />
+            </div>
+
+            <div class="form-group">
+                <label> Duration </label>
+                <input type="text" class="form-control" id="duration" name="duration" placeholder="2hrs"  />
             </div>
 
             <div class="form-group">
@@ -195,6 +200,23 @@
         </div>
 
       </form>
+
+      <div class='alert alert-danger' style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+          <strong>Whoops!</strong> There were some problems with your input.<br><br>
+          <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
+      </div>
+
+      <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
+          {{ Session::get('success') }}
+      </div>
       </div>
       <!-- /.container-fluid -->
 

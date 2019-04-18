@@ -77,11 +77,13 @@ Route::group(['prefix' => 'admin/'], function() {
     Route::get('home', 'Auth\AdminController@showHome')->name('admin.home');
     Route::get('logout', 'Auth\AdminController@logout')->name('admin.logout');
 
-    //Other administrativec functions
-    Route::get('sessions/create', 'Auth\AdminController@createSession')->name('admin.session.create');
+    //Session action routes
+    //Later changed to Laps;
+    Route::get('sessions/create', 'Auth\AdminController@viewCreateSession')->name('admin.session.create');
     Route::get('sessions/all', 'Auth\AdminController@viewAllSession')->name('admin.session.all');
+    Route::post('sessions/create', 'Auth\AdminController@postCreateSession')->name('admin.session.post');
 
     //Category routes
-    Route::get('category/create', 'Auth\AdminController@createCategory')->name('admin.category.create');
+    Route::get('category/create', 'Auth\AdminController@viewCreateCategory')->name('admin.category.create');
     Route::get('category/all', 'Auth\AdminController@viewAllCAtegory')->name('admin.category.all');
 });
