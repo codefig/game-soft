@@ -52,7 +52,10 @@ class AdminController extends Controller
     }
 
     public function viewAllSession(Request $request){
-        return view('admin.showsessions');
+
+        $laps = Lap::all();
+
+        return view('admin.showsessions', compact('laps'));
     }
 
     public function viewCreateCategory(){

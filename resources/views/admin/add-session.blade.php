@@ -121,7 +121,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ route('admin.session.all') }}">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>View All Sessions</span></a>
       </li>

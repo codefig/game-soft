@@ -164,7 +164,9 @@
         <!-- Page Content -->
         <h1>All Sessions</h1>
         <hr>
-        <p>This is a great starting point for new custom pages.</p>
+
+
+
 
 
         <div class="container bodycontainer">
@@ -174,33 +176,29 @@
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Duration</th>
+                    <th scope="col">Start Time</th>
                     <th scope="col">Status</th>
                     <th scope="col">Actions</th>
-
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                  </tr>
+                    @if(count($laps) > 0)
+                    @foreach ($laps as $lap)
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>{{ $lap->name }}</td>
+                            <td>{{ $lap->start_time }}</td>
+                            <td>{{ $lap->duration }}</td>
+                            <td>{{ $lap->status }}</td>
+                            <td>
+                                <button class='btn btn-danger'>Delete</button>
+                                <button class="btn btn-info">Activate/Deactivate</button>
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                          </tr>
+                  @endforeach
+            @endif
+
                 </tbody>
               </table>
         </div>
