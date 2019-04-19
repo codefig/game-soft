@@ -86,4 +86,5 @@ Route::group(['prefix' => 'admin/'], function() {
     //Category routes
     Route::get('category/create', 'Auth\AdminController@viewCreateCategory')->name('admin.category.create');
     Route::get('category/all', 'Auth\AdminController@viewAllCAtegory')->name('admin.category.all');
+    Route::post('category/create','Auth\AdminController@postCreateCategory')->name('admin.category.create.post');
 });

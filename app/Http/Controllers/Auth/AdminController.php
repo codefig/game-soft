@@ -62,6 +62,17 @@ class AdminController extends Controller
         return view('admin.add-category');
     }
 
+    public function postCreateCategory(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'session_id' => 'required|numeric',
+        ]);
+
+        return "This is the post function";
+    }
+
     public function viewAllCategory(){
         return view('admin.showcategories');
     }

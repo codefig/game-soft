@@ -168,16 +168,24 @@
 
         <div class="container bodycontainer">
 
-            <form method="post" action="">
+            <form method="post" action="{{ route('admin.category.create.post') }}">
 
                 <div class="form-group">
                     <label> Name </label>
-                    <input type="text" class="form-control" id="name" placeholder="Category Name" />
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" />
                 </div>
 
                 <div class="form-group">
                     <label> Description </label>
                     <input type='text' class="form-control" id="description" name="description" />
+                </div>
+
+                <div class="form-group">
+                    <label> Session/Lap </label>
+                    <select  class="form-control" name="seesion_id">
+                        <option value="0"> Select Session </option>
+                        <option value="1">Lambda </option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -187,6 +195,25 @@
             </div>
 
         </form>
+
+        <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
+              </div>
+
+
+              <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
+                  {{ Session::get('success') }}
+              </div>
+              </div>
       </div>
       <!-- /.container-fluid -->
 
