@@ -163,9 +163,11 @@
 
         <!-- Page Content -->
         <h1>Add Category</h1>
+
+        @if(!count($laps)> 0)
+            <div class="alert alert-danger">Please Create Test Laps before adding categories </div>
+        @endif
         <hr>
-
-
         <div class="container bodycontainer">
 
             <form method="post" action="{{ route('admin.category.create.post') }}">
@@ -183,8 +185,13 @@
                 <div class="form-group">
                     <label> Session/Lap </label>
                     <select  class="form-control" name="session_id">
-                        <option value="0"> Select Session </option>
-                        <option value="1">Lambda </option>
+
+                        @if(count($laps) > 0)
+                            @foreach($laps as $lap)
+                            <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
+                            @endforeach
+                        @endif
+
                     </select>
                 </div>
 
