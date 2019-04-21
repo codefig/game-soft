@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use App\Lap;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -69,8 +70,13 @@ class AdminController extends Controller
             'description' => 'required',
             'session_id' => 'required|numeric',
         ]);
-
-        return "This is the post function";
+            $category = new Category();
+            $category->name = $request->name;
+            $category->description  = $request->description;
+            $category->session_id = $request->session_id;
+            $category->save();
+            Session::flash('success', "Category created successfully !");
+            return redirect()->back();
     }
 
     public function viewAllCategory(){

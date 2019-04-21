@@ -182,7 +182,7 @@
 
                 <div class="form-group">
                     <label> Session/Lap </label>
-                    <select  class="form-control" name="seesion_id">
+                    <select  class="form-control" name="session_id">
                         <option value="0"> Select Session </option>
                         <option value="1">Lambda </option>
                     </select>
