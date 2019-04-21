@@ -14,4 +14,12 @@ class Lap extends Model
         'name', 'status', 'start_time', 'duration',
     ];
 
+    public function status (){
+        if($this->status == 0){
+            return "Inactive";
+        }else{
+            return "Active";
+        }
+    }
+
 }

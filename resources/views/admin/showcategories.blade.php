@@ -162,9 +162,9 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>All Categories</h1>
+        <h1>View Categories</h1>
         <hr>
-        <p>This is a great starting point for new custom pages.</p>
+        <p>Shows all added categories</p>
 
 
         <div class="container bodycontainer">
@@ -173,34 +173,32 @@
                   <tr>
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Duration</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Lap/Session</th>
+                    <th scope="col">Session Status</th>
                     <th scope="col">Actions</th>
 
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                  </tr>
+
+                    @if(count($categories) > 0)
+                        @foreach ($categories as $category)
+
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>{{ $category->name }}</td>
+                          <td>{{ $category->description }}</td>
+                          <td>{{ $category->lap->name }}</td>
+                          <td>{{ $category->lap->status() }}</td>
+                          <td>
+                              <button class="btn btn-primary">Edit </button>
+                              <button class="btn btn-danger">Delete </button>
+                          </td>
+                        </tr>
+                        @endforeach
+                    @endif
+
                 </tbody>
               </table>
         </div>

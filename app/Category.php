@@ -14,4 +14,8 @@ class Category extends Model
         'description',
         'session_id',
     ];
+
+    public function lap(){
+        return $this->belongsTo(Lap::class, 'session_id');
+    }
 }

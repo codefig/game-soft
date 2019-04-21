@@ -61,7 +61,7 @@ class AdminController extends Controller
 
     public function viewCreateCategory(){
         $laps = Lap::all();
-        //Send the list of laps to the front end
+        //Send the list of laps to the front end`
         return view('admin.add-category', compact('laps'));
     }
 
@@ -82,6 +82,10 @@ class AdminController extends Controller
     }
 
     public function viewAllCategory(){
-        return view('admin.showcategories');
+
+        $categories = Category::all();
+        return view('admin.showcategories', compact('categories'));
     }
+
+
 }
