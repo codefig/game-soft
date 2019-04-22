@@ -201,6 +201,13 @@
 
                 </tbody>
               </table>
+
+              <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
+                    {{ Session::get('success') }}
+                </div>
+                <div class="alert alert-danger" style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
+                    {{ Session::get('error') }}
+                </div>
         </div>
 
       </div>

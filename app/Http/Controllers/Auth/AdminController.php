@@ -109,8 +109,16 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function deleteCategory(){
-        return "this is delete category";
+    public function deleteCategory(Request $request , $id){
+        $category = Category::find($id);
+        if(count($category) > 0){
+            $category->delete();
+            Session::flash('success', "Category Deleted  successfully !");
+            return redirect()->back();
+        }else{
+            Session::flash('error', "Error, Category Not Found !");
+            return redirect()->back();
+        }
     }
 
 
