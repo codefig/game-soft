@@ -199,7 +199,7 @@
 
                 <div class="form-group">
                     <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                    <button type="submit" name="submitBtn" class="btn btn-info"> Add Category</button>
+                    <button type="submit" name="submitBtn" class="btn btn-info"> Update Category</button>
                 </div>
             </div>
         </form>
