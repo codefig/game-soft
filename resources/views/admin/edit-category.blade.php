@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>View Sessions</title>
+  <title>ADd Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -162,47 +162,67 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>View Categories</h1>
+        <h1>Edit Category</h1>
+
+        @if(!count($laps)> 0)
+            <div class="alert alert-danger">Please Create Test Laps before adding categories </div>
+        @endif
         <hr>
-        <p>Shows all added categories</p>
-
-
         <div class="container bodycontainer">
-            <table class="table table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Lap/Session</th>
-                    <th scope="col">Session Status</th>
-                    <th scope="col">Actions</th>
 
-                  </tr>
-                </thead>
-                <tbody>
+        @if(count($category) > 0)
 
-                    @if(count($categories) > 0)
-                        @foreach ($categories as $category)
+        <form method="post" action="{{ route('admin.category.edit.post', $category->id) }}">
 
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>{{ $category->name }}</td>
-                          <td>{{ $category->description }}</td>
-                          <td>{{ $category->lap->name }}</td>
-                          <td>{{ $category->lap->status() }}</td>
-                          <td>
-                              <a class="btn btn-primary" href="{{ route('admin.category.edit.show', $category->id) }}">Edit </a>
-                              <a class="btn btn-danger" href="{{ route('admin.category.delete', $category->id) }}">Delete </a>
-                          </td>
-                        </tr>
-                        @endforeach
-                    @endif
+                <div class="form-group">
+                    <label> Name </label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" value="{{ $category->name }}"/>
+                </div>
 
-                </tbody>
-              </table>
-        </div>
+                <div class="form-group">
+                    <label> Description </label>
+                    <input type='text' class="form-control" id="description" name="description" value="{{ $category->description }}"/>
+                </div>
 
+                <div class="form-group">
+                    <label> Session/Lap </label>
+                    <select  class="form-control" name="session_id">
+
+                        @if(count($laps) > 0)
+                            @foreach($laps as $lap)
+                            <option {{ ($category->lap->id == $lap->id) ? "selected" : " " }}  value="{{ $lap->id }}"> {{ $lap->name }}</option>
+                            @endforeach
+                        @endif
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="hidden" name="_token" value="{{ Session::token() }}" />
+                    <button type="submit" name="submitBtn" class="btn btn-info"> Add Category</button>
+                </div>
+            </div>
+        </form>
+        @endif
+
+        <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
+              </div>
+
+
+              <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
+                  {{ Session::get('success') }}
+              </div>
+              </div>
       </div>
       <!-- /.container-fluid -->
 

@@ -68,8 +68,6 @@ Route::group(['prefix' => 'user/'], function () {
 
 
 //Admin Routes
-
-
 Route::group(['prefix' => 'admin/'], function() {
     Route::post('login', 'AdminController@postLoginForm')->name('admin.login.submit');
     Route::get('login', 'AdminController@showLoginForm')->name('admin.login');
@@ -87,4 +85,7 @@ Route::group(['prefix' => 'admin/'], function() {
     Route::get('category/create', 'Auth\AdminController@viewCreateCategory')->name('admin.category.create');
     Route::get('category/all', 'Auth\AdminController@viewAllCAtegory')->name('admin.category.all');
     Route::post('category/create','Auth\AdminController@postCreateCategory')->name('admin.category.create.post');
+    Route::get('category/edit/{id}', 'Auth\AdminController@showEditCategory')->name('admin.category.edit.show');
+    Route::post('category/edit/{id}', 'Auth\AdminController@postEditCategory')->name('admin.category.edit.post');
+    Route::get('category/delete/{id}', 'Auth\AdminController@deleteCategory')->name('admin.category.delete');
 });

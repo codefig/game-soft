@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use App\Lap;
 use App\Category;
+use Illuminate\Filesystem\Cache;
 
 class AdminController extends Controller
 {
@@ -85,6 +86,31 @@ class AdminController extends Controller
 
         $categories = Category::all();
         return view('admin.showcategories', compact('categories'));
+    }
+
+    public function showEditCategory(Request $request, $id){
+        $category = Category::find($id);
+        $laps = Lap::all();
+        return view('admin.edit-category', compact('category', 'laps'));
+    }
+
+    public function postEditCategory(Request $request, $id){
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'session_id' => 'required|numeric',
+            ]);
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->session_id = $request->session;
+        $category->update($request->all());
+        Session::flash('success', "Category Updated  successfully !");
+        return redirect()->back();
+    }
+
+    public function deleteCategory(){
+        return "this is delete category";
     }
 
 
