@@ -97,6 +97,4 @@ Route::group(['prefix' => 'admin/'], function() {
     Route::get('stage/delete/{id}', 'Auth\AdminController@deleteStage')->name('admin.category.delete');
 
 
-
-
 });

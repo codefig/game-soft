@@ -195,9 +195,9 @@
                 <label> Session/Lap </label>
                 <select  class="form-control" name="category_id">
 
-                    @if(count($laps) > 0)
-                        @foreach($laps as $lap)
-                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
+                    @if(count($categories) > 0)
+                        @foreach($categories as $category)
+                        <option value="{{ $category->id }}"> {{ $category->name }} </option>
                         @endforeach
                     @endif
 
@@ -211,6 +211,23 @@
 
         </form>
 
+        <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
+        </div>
+
+
+              <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
+                  {{ Session::get('success') }}
+              </div>
       </div>
       <!-- /.container-fluid -->
 
@@ -224,6 +241,9 @@
       </footer>
 
     </div>
+
+
+  </div>
     <!-- /.content-wrapper -->
 
   </div>

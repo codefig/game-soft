@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use App\Lap;
 use App\Category;
 use Illuminate\Filesystem\Cache;
+use App\Stage;
 
 class AdminController extends Controller
 {
@@ -129,8 +130,24 @@ class AdminController extends Controller
         return view('admin.add-stage', compact('laps', 'categories'));
     }
 
-    public function postCreateStage(){
-        return "this is the post create stage";
+    public function postCreateStage(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'timeframe' => 'numeric',
+            'session_id' => 'numeric',
+            'category_id' => 'numeric'
+        ]);
+
+        $stage = new Stage();
+        $stage->name = $request->name;
+        $stage->timeframe = $request->timeframe;
+        $stage->session_id = $request->session_id;
+        $stage->category_id = $request->category_id;
+        $stage->save();
+
+        Session::flash('success', "Test Stage created successfully !");
+        return redirect()->back();
+
     }
 
     public function showEditStage(){
