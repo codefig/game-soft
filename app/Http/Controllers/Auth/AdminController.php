@@ -141,7 +141,7 @@ class AdminController extends Controller
         $stage = new Stage();
         $stage->name = $request->name;
         $stage->timeframe = $request->timeframe;
-        $stage->session_id = $request->session_id;
+        $stage->lap_id = $request->lap_id;
         $stage->category_id = $request->category_id;
         $stage->save();
 
@@ -162,7 +162,9 @@ class AdminController extends Controller
         return "this si the deleteStage function";
     }
     public function viewAllStage(){
-        return "this is teh veiw all stages";
+
+        $stages = Stage::all();
+        return view('admin.showstages', compact('stages'));
     }
 
 

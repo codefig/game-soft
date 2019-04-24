@@ -17,7 +17,7 @@ class CreateStagesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('timeframe');
-            $table->integer('session_id');
+            $table->integer('lap_id');
             $table->integer('category_id');
             $table->timestamps();
         });

@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Blank Page</title>
+  <title>View Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -163,71 +163,54 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Add Stage </h1>
+        <h1>View Categories</h1>
         <hr>
+        <p>Shows all added categories</p>
 
-        <form method="post" action="{{ route('admin.stage.create.post') }}">
 
-        <div class="form-group">
-            <label> Stage Name </label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Stage Name">
-        </div>
+        <div class="container bodycontainer">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Lap/Session</th>
+                    <th scope="col">Session Status</th>
+                    <th scope="col">Actions</th>
 
-        <div class="form-group">
-            <label> Time Frame (Minutes)</label>
-            <input type="text" class='form-control' id="timeframe" name="timeframe" placeholder="Time Limit in Minutes"/>
-        </div>
+                  </tr>
+                </thead>
+                <tbody>
 
-        <div class="form-group">
-                <label> Session/Lap </label>
-                <select  class="form-control" name="lap_id">
+                    @if(count($stages) > 0)
+                        @foreach ($stages as $stage)
 
-                    @if(count($laps) > 0)
-                        @foreach($laps as $lap)
-                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>{{ $stage->name }}</td>
+                          <td>{{ $stage->timeframe }}</td>
+                          <td>{{ $stage-> }}</td>
+                          <td>{{ $stage->lap->status() }}</td>
+                          <td>
+                              <a class="btn btn-primary" href="{{ route('admin.category.edit.show', $category->id) }}">Edit </a>
+                              <a class="btn btn-danger" href="{{ route('admin.category.delete', $category->id) }}">Delete </a>
+                          </td>
+                        </tr>
                         @endforeach
                     @endif
 
-                </select>
-        </div>
-
-        <div class="form-group">
-                <label> Session/Lap </label>
-                <select  class="form-control" name="category_id">
-
-                    @if(count($categories) > 0)
-                        @foreach($categories as $category)
-                        <option value="{{ $category->id }}"> {{ $category->name }} </option>
-                        @endforeach
-                    @endif
-
-                </select>
-            </div>
-
-            <div class="form-group">
-                <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" class="btn btn-primary"> Create Stage </button>
-            </div>
-
-        </form>
-
-        <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
-                @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                  <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                  </ul>
-                </div>
-                @endif
-        </div>
-
+                </tbody>
+              </table>
 
               <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
-                  {{ Session::get('success') }}
-              </div>
+                    {{ Session::get('success') }}
+                </div>
+                <div class="alert alert-danger" style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
+                    {{ Session::get('error') }}
+                </div>
+        </div>
+
       </div>
       <!-- /.container-fluid -->
 
@@ -241,9 +224,6 @@
       </footer>
 
     </div>
-
-
-  </div>
     <!-- /.content-wrapper -->
 
   </div>

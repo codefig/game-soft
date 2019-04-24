@@ -13,4 +13,12 @@ class Stage extends Model
         'session_id',
         'category_id',
     ];
+
+    public function lap(){
+        return $this->belongsTo(Lap::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
