@@ -29,7 +29,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Admin (GameSoft) </a>
+    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -92,62 +92,63 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.home') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.session.create') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Create New Session</span></a>
-      </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.home') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Pages</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <h6 class="dropdown-header">Login Screens:</h6>
+                <a class="dropdown-item" href="login.html">Login</a>
+                <a class="dropdown-item" href="register.html">Register</a>
+                <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Other Pages:</h6>
+                <a class="dropdown-item" href="404.html">404 Page</a>
+                <a class="dropdown-item active" href="blank.html">Blank Page</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.session.create') }}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Create New Session</span></a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.session.all') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>View All Sessions</span></a>
-      </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.session.all') }}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>View All Sessions</span></a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.category.create') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Add Category</span></a>
-      </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.category.create') }}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Add Category</span></a>
+            </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.category.all') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>View All Categories</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.stage.create') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Add Stage</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.stage.all') }}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>All Stages</span></a>
-      </li>
-    </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.category.all') }}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>View All Categories</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.stage.create') }}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Add Stage</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.stage.all') }}">
+                <i class="fas fa-fw fa-table"></i>
+                <span>All Stages</span></a>
+            </li>
+          </ul>
+
 
     <div id="content-wrapper">
 

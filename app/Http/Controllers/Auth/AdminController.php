@@ -122,4 +122,28 @@ class AdminController extends Controller
     }
 
 
+    public function viewCreateStage(){
+        return view('admin.add-stage');
+    }
+
+    public function postCreateStage(){
+        return "this is the post create stage";
+    }
+
+    public function showEditStage(){
+        return "this is the edit stagefunction ";
+    }
+
+    public function postEditStage(){
+        return "this is the edit stage submit";
+    }
+
+    public function deleteStage(){
+        return "this si the deleteStage function";
+    }
+    public function viewAllStage(){
+        return "this is teh veiw all stages";
+    }
+
+
 }

@@ -88,4 +88,15 @@ Route::group(['prefix' => 'admin/'], function() {
     Route::get('category/edit/{id}', 'Auth\AdminController@showEditCategory')->name('admin.category.edit.show');
     Route::post('category/edit/{id}', 'Auth\AdminController@postEditCategory')->name('admin.category.edit.post');
     Route::get('category/delete/{id}', 'Auth\AdminController@deleteCategory')->name('admin.category.delete');
+
+    Route::get('stage/create', 'Auth\AdminController@viewCreateStage')->name('admin.stage.create');
+    Route::get('stage/all', 'Auth\AdminController@viewAllStage')->name('admin.stage.all');
+    Route::post('stage/create','Auth\AdminController@postCreateStage')->name('admin.stage.create.post');
+    Route::get('stage/edit/{id}', 'Auth\AdminController@showEditStage')->name('admin.stage.edit.show');
+    Route::post('stage/edit/{id}', 'Auth\AdminController@postEditStage')->name('admin.stage.edit.post');
+    Route::get('stage/delete/{id}', 'Auth\AdminController@deleteStage')->name('admin.category.delete');
+
+
+
+
 });
