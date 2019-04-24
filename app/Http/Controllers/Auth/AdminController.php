@@ -150,19 +150,35 @@ class AdminController extends Controller
 
     }
 
-    public function showEditStage(){
-        return "this is the edit stagefunction ";
+    public function showEditStage(Request $request , $id){
+        $stage = Stage::find($id);
+        $categories = Category::all();
+        $laps = Lap::all();
+        return view('admin.edit-stage', compact('stage', 'categories', 'laps'));
     }
 
-    public function postEditStage(){
-        return "this is the edit stage submit";
+    public function postEditStage(Request $request, $id){
+        $request->validate([
+            'name' => 'required',
+            'timeframe' => 'required',
+            'lap_id' => 'required|numeric',
+            'category_id' => 'required|numeric',
+            ]);
+        $stage = Stage::find($id);
+        $stage->name = $request->name;
+        $stage->timeframe = $request->timeframe;
+        $stage->lap_id = $request->lap_id;
+        $stage->category_id = $request->category_id;
+        $stage->update($request->all());
+        Session::flash('success', "stage Updated  successfully !");
+        return redirect()->back();
     }
 
     public function deleteStage(){
         return "this si the deleteStage function";
     }
-    public function viewAllStage(){
 
+    public function viewAllStage(){
         $stages = Stage::all();
         return view('admin.showstages', compact('stages'));
     }
