@@ -163,9 +163,53 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Blank Page</h1>
+        <h1>Add Stage </h1>
         <hr>
-        <p>This is a great starting point for new custom pages.</p>
+
+        <form method="post" action="{{ route('admin.stage.create.post') }}">
+
+        <div class="form-group">
+            <label> Stage Name </label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Stage Name">
+        </div>
+
+        <div class="form-group">
+            <label> Time Frame (Minutes)</label>
+            <input type="text" class='form-control' id="timeframe" name="timeframe" placeholder="Time Limit in Minutes"/>
+        </div>
+
+        <div class="form-group">
+                <label> Session/Lap </label>
+                <select  class="form-control" name="session_id">
+
+                    @if(count($laps) > 0)
+                        @foreach($laps as $lap)
+                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
+                        @endforeach
+                    @endif
+
+                </select>
+        </div>
+
+        <div class="form-group">
+                <label> Session/Lap </label>
+                <select  class="form-control" name="category_id">
+
+                    @if(count($laps) > 0)
+                        @foreach($laps as $lap)
+                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
+                        @endforeach
+                    @endif
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="_token" value="{{ Session::token() }}" />
+                <button type="submit" class="btn btn-primary"> Create Stage </button>
+            </div>
+
+        </form>
 
       </div>
       <!-- /.container-fluid -->

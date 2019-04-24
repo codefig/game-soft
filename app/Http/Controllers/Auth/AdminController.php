@@ -123,7 +123,10 @@ class AdminController extends Controller
 
 
     public function viewCreateStage(){
-        return view('admin.add-stage');
+        $laps = Lap::all();
+        $categories = Category::all();
+
+        return view('admin.add-stage', compact('laps', 'categories'));
     }
 
     public function postCreateStage(){
