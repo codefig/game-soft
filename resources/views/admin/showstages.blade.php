@@ -165,7 +165,7 @@
         <!-- Page Content -->
         <h1>View Categories</h1>
         <hr>
-        <p>Shows all added categories</p>
+        <p>Shows all Stages</p>
 
 
         <div class="container bodycontainer">
@@ -174,9 +174,9 @@
                   <tr>
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">TimeFrame (Minutes) </th>
                     <th scope="col">Lap/Session</th>
-                    <th scope="col">Session Status</th>
+                    <th scope="col">Category</th>
                     <th scope="col">Actions</th>
 
                   </tr>
@@ -190,11 +190,11 @@
                           <th scope="row">1</th>
                           <td>{{ $stage->name }}</td>
                           <td>{{ $stage->timeframe }}</td>
-                          <td>{{ $stage-> }}</td>
-                          <td>{{ $stage->lap->status() }}</td>
+                          <td>{{ $stage->lap->name }}</td>
+                          <td>{{ $stage->category->name }}</td>
                           <td>
-                              <a class="btn btn-primary" href="{{ route('admin.category.edit.show', $category->id) }}">Edit </a>
-                              <a class="btn btn-danger" href="{{ route('admin.category.delete', $category->id) }}">Delete </a>
+                              <a class="btn btn-primary" href="{{ route('admin.stage.edit.show', $stage->id) }}">Edit </a>
+                              <a class="btn btn-danger" href="{{ route('admin.stage.delete', $stage->id) }}">Delete </a>
                           </td>
                         </tr>
                         @endforeach
