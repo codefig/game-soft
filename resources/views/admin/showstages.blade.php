@@ -185,13 +185,12 @@
                     @php $counter = 0 @endphp
                     @if(count($stages) > 0)
                         @foreach ($stages as $stage)
-
                         <tr>
                           <th scope="row">{{ $counter = $counter+1 }}</th>
                           <td>{{ $stage->name }}</td>
                           <td>{{ $stage->timeframe }}</td>
-                          <td>{{ $stage->lap->name }}</td>
-                          <td>{{ $stage->category }}</td>
+                          <td>{{ ($stage->lap) ? ($stage->lap->name) : "Deleted"  }}</td>
+                          <td>{{ ($stage->category) ? ($stage->category->name) : "Deleted" }}</td>
                           <td>
                               <a class="btn btn-primary" href="{{ route('admin.stage.edit.show', $stage->id) }}">Edit </a>
                               <a class="btn btn-danger" href="{{ route('admin.stage.delete', $stage->id) }}">Delete </a>
