@@ -135,7 +135,8 @@ class AdminController extends Controller
             'name' => 'required',
             'timeframe' => 'numeric',
             'session_id' => 'numeric',
-            'category_id' => 'numeric'
+            'category_id' => 'numeric',
+            'pass_value' => 'numeric'
         ]);
 
         $stage = new Stage();
@@ -143,6 +144,7 @@ class AdminController extends Controller
         $stage->timeframe = $request->timeframe;
         $stage->lap_id = $request->lap_id;
         $stage->category_id = $request->category_id;
+        $stage->pass_value = $request->pass_value;
         $stage->save();
 
         Session::flash('success', "Test Stage created successfully !");
