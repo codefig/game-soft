@@ -174,8 +174,18 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function deleteStage(){
-        return "this si the deleteStage function";
+    public function deleteStage(Request $request, $id){
+
+        $stage = Stage::find($id);
+
+        if(count($stage) > 0){
+            $stage->delete();
+            Session::flash('success', "Stage Deleted  successfully !");
+            return redirect()->back();
+        }else{
+            Session::flash('error', "Error, Stage Not Found !");
+            return redirect()->back();
+        }
     }
 
     public function viewAllStage(){
