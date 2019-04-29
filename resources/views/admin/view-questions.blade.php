@@ -166,7 +166,7 @@
         <h1>Add Question </h1>
         <hr>
 
-        <form method="post" action="{{ route('admin.question.create.post') }}">
+        <form method="post" action="{{ route('admin.question.select.post') }}">
 
 
         <div class="form-group">
@@ -182,8 +182,8 @@
         </div>
 
         <div class="form-group">
-            <label> Stage  </label>
-            <select  class="form-control" name="lap_id">
+            <label> Category  </label>
+            <select  class="form-control" name="category_id">
                 @if(count($categories) > 0)
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}"> {{ $category->name }} </option>
@@ -195,7 +195,7 @@
 
     <div class="form-group">
         <label> Stage  </label>
-        <select  class="form-control" name="lap_id">
+        <select  class="form-control" name="stage_id">
             @if(count($stages) > 0)
                 @foreach($stages as $stage)
                 <option value="{{ $stage->id }}"> {{ $stage->name }} </option>
@@ -208,7 +208,7 @@
 
             <div class="form-group">
                 <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" class="btn btn-primary"> Create Question </button>
+                <button type="submit" class="btn btn-primary"> View Questions </button>
             </div>
 
         </form>

@@ -203,15 +203,6 @@ class AdminController extends Controller
         return view('admin.add-question', compact('stages'));
     }
 
-    public function viewAllQuestion(){
-        $laps = Lap::all();
-        $categories = Category::all();
-        $stage = Stage::all();
-
-        return view('admin.view-questions', compact('stages', 'categories', 'laps'));
-        // return "this is the veiw all question";
-    }
-
     public function postCreateQuestion(Request $request){
         // return "this is the post create question";
 
@@ -239,6 +230,32 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
+    public function viewAllQuestion(){
+
+        return 'this is the veiw all questions ';
+    }
+
+    public function selectQuestionToView(){
+        $laps = Lap::all();
+        $categories = Category::all();
+        $stages = Stage::all();
+
+        return view('admin.view-questions', compact('stages', 'categories', 'laps'));
+    }
+
+    public function postSelectQuestionToView(Request $request){
+
+        $request->validate([
+            'lap_id' => 'required|numeric',
+            'stage_id' => 'required|numeric',
+            'category_id' => 'required|numeric',
+        ]);
+
+        // $stage = Stage::where('lap_id', $req)
+        echo "lap id : ". $request->lap_id . " category_id  :". $request->category_id;
+
+    }
     public function showEditQuestion(){
         return "this is the eid tquestion function";
     }
