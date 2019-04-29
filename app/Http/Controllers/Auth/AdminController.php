@@ -215,7 +215,6 @@ class AdminController extends Controller
     public function postCreateQuestion(Request $request){
         // return "this is the post create question";
 
-        return $request->all();
         $request->validate([
             'content' => 'required',
             'a' => 'required',
