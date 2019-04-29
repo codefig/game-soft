@@ -175,6 +175,7 @@
                     <th scope="col">SN</th>
                     <th scope="col">Name</th>
                     <th scope="col">TimeFrame (Minutes) </th>
+                    <th scope="col">Pass Value</th>
                     <th scope="col">Lap/Session</th>
                     <th scope="col">Category</th>
                     <th scope="col">Actions</th>
@@ -189,6 +190,7 @@
                           <th scope="row">{{ $counter = $counter+1 }}</th>
                           <td>{{ $stage->name }}</td>
                           <td>{{ $stage->timeframe }}</td>
+                          <td>{{ $stage->pass_value }}</td>
                           <td>{{ ($stage->lap) ? ($stage->lap->name) : "Deleted"  }}</td>
                           <td>{{ ($stage->category) ? ($stage->category->name) : "Deleted" }}</td>
                           <td>
