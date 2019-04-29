@@ -133,10 +133,10 @@ class AdminController extends Controller
     public function postCreateStage(Request $request){
         $request->validate([
             'name' => 'required',
-            'timeframe' => 'numeric',
-            'session_id' => 'numeric',
-            'category_id' => 'numeric',
-            'pass_value' => 'numeric'
+            'timeframe' => 'required|numeric',
+            'session_id' => 'required|numeric',
+            'category_id' => 'required|numeric',
+            'pass_value' => 'required|numeric',
         ]);
 
         $stage = new Stage();
@@ -165,12 +165,14 @@ class AdminController extends Controller
             'timeframe' => 'required',
             'lap_id' => 'required|numeric',
             'category_id' => 'required|numeric',
+            'pass_value' => 'required|numeric'
             ]);
         $stage = Stage::find($id);
         $stage->name = $request->name;
         $stage->timeframe = $request->timeframe;
         $stage->lap_id = $request->lap_id;
         $stage->category_id = $request->category_id;
+        $stage->pass_value = $request->pass_value;
         $stage->update($request->all());
         Session::flash('success', "stage Updated  successfully !");
         return redirect()->back();

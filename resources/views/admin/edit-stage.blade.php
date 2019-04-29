@@ -180,6 +180,11 @@
                     <input type="text" class='form-control' id="timeframe" name="timeframe" value="{{ $stage->timeframe }}"/>
                 </div>
 
+                <div class='form-group'>
+                    <label> Pass Value (Number of Questions) to Pass the Stage </label>
+                    <input type="text" name="pass_value" id="pass_value" class="form-control" value="{{ $stage->pass_value }}"/>
+                </div>
+
                 <div class="form-group">
                         <label> Session/Lap </label>
                         <select  class="form-control" name="lap_id">
