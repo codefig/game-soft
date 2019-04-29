@@ -11,6 +11,7 @@ use App\Lap;
 use App\Category;
 use Illuminate\Filesystem\Cache;
 use App\Stage;
+use App\Question;
 
 class AdminController extends Controller
 {
@@ -198,15 +199,36 @@ class AdminController extends Controller
     }
 
     public function viewCreateQuestion(){
-        return "this is the create question function";
+        $stages = Stage::all();
+        return view('admin.add-question', compact('stages'));
     }
 
     public function viewAllQuestion(){
         return "this is the veiw all question";
     }
 
-    public function postCreateQuestion(){
-        return "this is the post create question";
+    public function postCreateQuestion(Request $request){
+        // return "this is the post create question";
+        $request->validate([
+            'content' => 'required',
+            'a' => 'required',
+            'b' => 'required',
+            'c' => 'required',
+            'd' => 'required',
+            'correct' => 'required',
+        ]);
+
+        $question = new Question();
+        $question->content = $request->content;
+        $question->a = $request->a;
+        $question->b = $request->b;
+        $question->c = $request->c;
+        $question->d = $request->d;
+        $question->correct = $request->correct;
+        $question->save();
+
+        Session::flash('success', "Question Added to Stage successfully !");
+        return redirect()->back();
     }
 
     public function showEditQuestion(){
