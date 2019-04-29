@@ -200,7 +200,7 @@
 
         <div class="form-group">
                 <label> Stage  </label>
-                <select  class="form-control" name="lap_id">
+                <select  class="form-control" name="stage_id">
                     @if(count($stages) > 0)
                         @foreach($stages as $stage)
                         <option value="{{ $stage->id }}"> {{ $stage->name }} </option>

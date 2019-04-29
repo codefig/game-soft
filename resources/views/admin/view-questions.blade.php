@@ -163,30 +163,15 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Add Stage </h1>
+        <h1>Add Question </h1>
         <hr>
 
-        <form method="post" action="{{ route('admin.stage.create.post') }}">
+        <form method="post" action="{{ route('admin.question.create.post') }}">
+
 
         <div class="form-group">
-            <label> Stage Name </label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Stage Name">
-        </div>
-
-        <div class="form-group">
-            <label> Time Frame (Minutes)</label>
-            <input type="text" class='form-control' id="timeframe" name="timeframe" placeholder="Time Limit in Minutes"/>
-        </div>
-
-        <div class='form-group'>
-            <label> Pass Value (Number of Questions) to Pass the Stage </label>
-            <input type="text" name="pass_value" id="pass_value" class="form-control" placeholder="The minimum number of questions for passing this stage"/>
-        </div>
-
-        <div class="form-group">
-                <label> Session/Lap </label>
+                <label> Lap  </label>
                 <select  class="form-control" name="lap_id">
-
                     @if(count($laps) > 0)
                         @foreach($laps as $lap)
                         <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
@@ -197,21 +182,33 @@
         </div>
 
         <div class="form-group">
-                <label> Category </label>
-                <select  class="form-control" name="category_id">
+            <label> Stage  </label>
+            <select  class="form-control" name="lap_id">
+                @if(count($categories) > 0)
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}"> {{ $category->name }} </option>
+                    @endforeach
+                @endif
 
-                    @if(count($categories) > 0)
-                        @foreach($categories as $category)
-                        <option value="{{ $category->id }}"> {{ $category->name }} </option>
-                        @endforeach
-                    @endif
+            </select>
+    </div>
 
-                </select>
-            </div>
+    <div class="form-group">
+        <label> Stage  </label>
+        <select  class="form-control" name="lap_id">
+            @if(count($stages) > 0)
+                @foreach($stages as $stage)
+                <option value="{{ $stage->id }}"> {{ $stage->name }} </option>
+                @endforeach
+            @endif
+
+        </select>
+</div>
+
 
             <div class="form-group">
                 <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" class="btn btn-primary"> Create Stage </button>
+                <button type="submit" class="btn btn-primary"> Create Question </button>
             </div>
 
         </form>

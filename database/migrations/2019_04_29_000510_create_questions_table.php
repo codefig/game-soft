@@ -21,6 +21,7 @@ class CreateQuestionsTable extends Migration
             $table->string('c');
             $table->string('d');
             $table->string('correct');
+            $table->integer('stage_id');
             $table->timestamps();
         });
     }

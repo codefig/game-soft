@@ -135,7 +135,7 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'timeframe' => 'required|numeric',
-            'session_id' => 'required|numeric',
+            'lap_id' => 'required|numeric',
             'category_id' => 'required|numeric',
             'pass_value' => 'required|numeric',
         ]);
@@ -204,11 +204,18 @@ class AdminController extends Controller
     }
 
     public function viewAllQuestion(){
-        return "this is the veiw all question";
+        $laps = Lap::all();
+        $categories = Category::all();
+        $stage = Stage::all();
+
+        return view('admin.view-questions', compact('stages', 'categories', 'laps'));
+        // return "this is the veiw all question";
     }
 
     public function postCreateQuestion(Request $request){
         // return "this is the post create question";
+
+        return $request->all();
         $request->validate([
             'content' => 'required',
             'a' => 'required',
@@ -216,6 +223,7 @@ class AdminController extends Controller
             'c' => 'required',
             'd' => 'required',
             'correct' => 'required',
+            'stage_id' => 'required|numeric',
         ]);
 
         $question = new Question();
@@ -225,6 +233,7 @@ class AdminController extends Controller
         $question->c = $request->c;
         $question->d = $request->d;
         $question->correct = $request->correct;
+        $question->stage_id = $request->stage_id;
         $question->save();
 
         Session::flash('success', "Question Added to Stage successfully !");
