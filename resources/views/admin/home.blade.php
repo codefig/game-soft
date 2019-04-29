@@ -147,6 +147,12 @@
           <i class="fas fa-fw fa-table"></i>
           <span>All Stages</span></a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.question.create') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Add Question </span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">

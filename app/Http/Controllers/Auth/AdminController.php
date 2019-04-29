@@ -197,5 +197,29 @@ class AdminController extends Controller
         return view('admin.showstages', compact('stages'));
     }
 
+    public function viewCreateQuestion(){
+        return "this is the create question function";
+    }
+
+    public function viewAllQuestion(){
+        return "this is the veiw all question";
+    }
+
+    public function postCreateQuestion(){
+        return "this is the post create question";
+    }
+
+    public function showEditQuestion(){
+        return "this is the eid tquestion function";
+    }
+
+    public function postEditQuestion(){
+        return "this is the edi tquestion submit funciton";
+    }
+
+    public function deleteQuestion(){
+        return "this is the delete question function";
+    }
+
 
 }

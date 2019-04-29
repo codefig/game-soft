@@ -89,12 +89,22 @@ Route::group(['prefix' => 'admin/'], function() {
     Route::post('category/edit/{id}', 'Auth\AdminController@postEditCategory')->name('admin.category.edit.post');
     Route::get('category/delete/{id}', 'Auth\AdminController@deleteCategory')->name('admin.category.delete');
 
+    //Stage routes
     Route::get('stage/create', 'Auth\AdminController@viewCreateStage')->name('admin.stage.create');
     Route::get('stage/all', 'Auth\AdminController@viewAllStage')->name('admin.stage.all');
     Route::post('stage/create','Auth\AdminController@postCreateStage')->name('admin.stage.create.post');
     Route::get('stage/edit/{id}', 'Auth\AdminController@showEditStage')->name('admin.stage.edit.show');
     Route::post('stage/edit/{id}', 'Auth\AdminController@postEditStage')->name('admin.stage.edit.post');
     Route::get('stage/delete/{id}', 'Auth\AdminController@deleteStage')->name('admin.stage.delete');
+
+    //Questions routes
+    Route::get('question/create', 'Auth\AdminController@viewCreateQuestion')->name('admin.question.create');
+    Route::get('question/all', 'Auth\AdminController@viewAllQuestion')->name('admin.question.all');
+    Route::post('question/create','Auth\AdminController@postCreateQuestion')->name('admin.question.create.post');
+    Route::get('question/edit/{id}', 'Auth\AdminController@showEditQuestion')->name('admin.question.edit.show');
+    Route::post('question/edit/{id}', 'Auth\AdminController@postEditQuestion')->name('admin.question.edit.post');
+    Route::get('question/delete/{id}', 'Auth\AdminController@deleteQuestion')->name('admin.question.delete');
+
 
 
 });
