@@ -30,7 +30,7 @@
                         <span class="bottom"></span>
                       </div>
                       <ul>
-                        <li><a href=""{{ route('index') }} class="active">Home</a></li>
+                        <li><a href="{{ route('index') }}" class="active">Home</a></li>
                         <li><a href="{{ route('about') }}">About</a></li>
                         <li><a href="{{ route('faq') }}">Faq</a></li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
