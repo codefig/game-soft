@@ -65,8 +65,8 @@
             <p>Very important in the area of spectral aqutancancae for minimal<br>
               development of eltrocal cadets of based involvement</p>
             <div class="cta-button">
-              <a href="#" class="btn btn-lg btn-primary">Register</a>
-              <a href="#" class="btn btn-lg btn-transparent">Take Test</a>
+              <a href="{{ route('register') }}" class="btn btn-lg btn-primary">Register</a>
+              <a href="" class="btn btn-lg btn-transparent">Take Test</a>
             </div>
           </div>
           <div class="col-md-12 col-lg-6">
@@ -237,7 +237,7 @@
         </div>
       </div>
       <div class="row justify-content-center mt-5">
-        <a href="#" class="btn btn-primary-i btn-lg">Get Started</a>
+        <a href="{{ route('login') }}" class="btn btn-primary-i btn-lg">Get Started</a>
       </div>
     </div>
   </section>

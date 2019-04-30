@@ -79,7 +79,7 @@
     </div>
     <div class="alert alert-success" role="alert">
         <p>Successfully logged in</p>
-      </div>
+    </div>
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">

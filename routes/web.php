@@ -17,25 +17,14 @@ Route::get('/', function () {
 //Main routes
 Route::group(['prefix' => '/'], function () {
 
-    Route::get('about', function () {
-        return view('about');
-    })->name('about');
-
-    Route::get('register', function () {
-        return view('register');
-    })->name('register');
-
-    Route::get('login', function () {
-        return view('login');
-    })->name('login');
-
-    Route::get('faq', function () {
-        return view('faq');
-    })->name('faq');
-
-    Route::get('contact', function () {
-        return view('contact');
-    })->name('contact');
+    Route::get('about', 'UserController@showAbout')->name('about');
+    Route::get('register', 'UserController@showRegisterForm')->name('register');
+    Route::post('register', 'UserController@postRegisterForm')->name('register.post');
+    Route::get('login', 'UserController@showLoginForm')->name('login');
+    Route::post('login', 'UserController@postLogin')->name('login.post');
+    Route::get('faq', 'UserController@showFaq')->name('faq');
+    Route::get('contact', 'UserController@showContactUs')->name('contact');
+    Route::get('forgot', 'UserController@showForgotPassword')->name('forgot');
 });
 
 
