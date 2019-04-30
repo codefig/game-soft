@@ -30,29 +30,17 @@ Route::group(['prefix' => '/'], function () {
 
 Route::group(['prefix' => 'user/'], function () {
 
-    Route::get('dashboard', function () {
-        return view('user.dashboard');
-    })->name('dashboard');
+    Route::get('dashboard','Auth\UserController@showDashboard')->name('dashboard');
 
-    Route::get('notifications', function () {
-        return view('user.notifications');
-    })->name('notifications');
+    Route::get('notifications','Auth\UserController@showNotificationsPage')->name('notifications');
 
-    Route::get('referrals', function () {
-        return view('user.referrals');
-    })->name('referrals');
+    Route::get('referrals', 'Auth\UserController@showReferralsPage')->name('referrals');
 
-    Route::get('stages', function () {
-        return view('user.stages');
-    })->name('stages');
+    Route::get('stages','Auth\UserController@showStagesPage')->name('stages');
 
-    Route::get('test', function () {
-        return view('user.test');
-    })->name('test');
+    Route::get('test','Auth\UserController@showTestPage')->name('test');
 
-    Route::get('categories', function () {
-        return view('user.categories');
-    })->name('categories');
+    Route::get('categories','Auth\UserController@showCategories')->name('categories');
 });
 
 
