@@ -67,8 +67,13 @@
             <p>Very important in the area of spectral aqutancancae for minimal<br>
               development of eltrocal cadets of based involvement</p>
             <div class="cta-button">
-              <a href="{{ route('register') }}" class="btn btn-lg btn-primary">Register</a>
-              <a href="" class="btn btn-lg btn-transparent">Take Test</a>
+
+                @if (Auth::user())
+                    <a href="{{ route('dashboard') }}" class="btn btn-lg btn-primary">My Dashboard</a>
+                @else
+                    <a href="{{ route('register') }}" class="btn btn-lg btn-primary">Register</a>
+                    <a href="" class="btn btn-lg btn-transparent">Take Test</a>
+                @endif
             </div>
           </div>
           <div class="col-md-12 col-lg-6">

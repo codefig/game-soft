@@ -21,7 +21,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('register', 'UserController@showRegisterForm')->name('register');
     Route::post('register', 'UserController@postRegisterForm')->name('register.post');
     Route::get('login', 'UserController@showLoginForm')->name('login');
-    Route::post('login', 'UserController@postLogin')->name('login.post');
+    Route::post('login', 'UserController@postLoginForm')->name('login.post');
     Route::get('faq', 'UserController@showFaq')->name('faq');
     Route::get('contact', 'UserController@showContactUs')->name('contact');
     Route::get('forgot', 'UserController@showForgotPassword')->name('forgot');

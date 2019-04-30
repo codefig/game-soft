@@ -59,19 +59,20 @@
                     <img class="brand-logo" src="img/logo.svg">
                     <a href="#" class="btn btn-lg btn-primary-i facebook">Login with Facebook</a>
                     <a href="#" class="btn btn-lg btn-primary-i google">Login with Google</a>
-                    <form>
+                    <form method="POST" action="{{ route('login.post') }}">
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <input placeholder="Email" type="email" id="email" class="form-control" />
-                                <p class="error-message">Your email isn't valid</p>
+                                <input placeholder="Email" type="email" name="email" id="email" class="{{ ($errors->first('email') ? "form-control error" : "form-control") }}" />
+                                <p class="error-message">{{ $errors->first('email') }}</p>
                             </div>
                             <div class="col-md-12 form-group">
-                                <input placeholder="Password" type="password" id="password" class="form-control" />
-                                <p class="error-message">Your password isn't valid</p>
+                                <input placeholder="Password" type="password" name="password" id="password" class="{{ ($errors->first('password') ? "form-control error" : "form-control") }}" />
+                                <p class="error-message">{{ $errors->first('password') }}</p>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-lg btn-primary-i login">Login</button>
+                        <input type="hidden" name="_token" value="{{ Session::token() }}" />
                     </form>
-                    <a href="{{ route('dashboard') }}" class="btn btn-lg btn-primary-i login">Login</a>
                     <div class="d-flex justify-content-between">
                         <div class="checkbox">
                             <label><input type="checkbox" value="">Remember me</label>

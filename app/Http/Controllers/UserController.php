@@ -61,8 +61,16 @@ class UserController extends Controller
         return view('login');
     }
 
-    public function postLoginForm(){
-        return "this isthe post login form";
+    public function postLoginForm(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            return redirect()->route('dashboard');
+        }
+        return redirect()->back()->withErrors(['email' => 'Email or Password is incorrect']);
     }
 
     public function showFaq(){
