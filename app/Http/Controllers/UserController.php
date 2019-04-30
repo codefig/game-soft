@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -32,8 +34,26 @@ class UserController extends Controller
             'password' => 'required|min:6',
             'password_confirm' => 'required|same:password'
         ]);
-        Session::flash('success', "Test Session created successfully !");
-        return redirect()->back();
+
+        $user = new User();
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->verification_token = str_random(40);
+        $user->picture = "https://randomuser.me/api/portraits/women/13.jpg";
+        $user->referral_count = 0;
+        $user->referral_bonus = 0.00;
+        $user->quiz_funds = 0.00;
+        $user->withdrawals = 0.00;
+        $user->password = bcrypt($request->password);
+
+        $user->save();
+
+
+        Auth::login($user);
+
+        return redirect()->to('/user/dashboard');
 
     }
 
