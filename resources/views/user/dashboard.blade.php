@@ -40,7 +40,7 @@
           <ul>
             <li><a href="{{ route('index') }}">Home</a></li>
             <li><a href="{{ route('dashboard') }}" class="active">Dashboard</a></li>
-            <li><a href="{{ route('index') }}" class="btn btn-transparent">Log out</a></li>
+            <li><a href="{{ route('logout') }}" class="btn btn-transparent">Logout</a></li>
           </ul>
         </div>
       </div>

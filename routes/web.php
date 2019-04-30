@@ -25,6 +25,9 @@ Route::group(['prefix' => '/'], function () {
     Route::get('faq', 'UserController@showFaq')->name('faq');
     Route::get('contact', 'UserController@showContactUs')->name('contact');
     Route::get('forgot', 'UserController@showForgotPassword')->name('forgot');
+    Route::get('home', 'Auth\UserController@showDashboard')->name('home');
+
+
 });
 
 
@@ -41,6 +44,7 @@ Route::group(['prefix' => 'user/'], function () {
     Route::get('test','Auth\UserController@showTestPage')->name('test');
 
     Route::get('categories','Auth\UserController@showCategories')->name('categories');
+    Route::get('logout', 'Auth\UserController@logoutUser')->name('logout');
 });
 
 

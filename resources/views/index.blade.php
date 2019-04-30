@@ -35,7 +35,9 @@
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('faq') }}">Faq</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
+            @if(!Auth::user())
             <li><a href="{{ route('login') }}" class="btn btn-transparent">Login</a></li>
+            @endif
           </ul>
         </div>
       </div>
