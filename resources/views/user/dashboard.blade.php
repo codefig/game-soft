@@ -49,11 +49,11 @@
   <div class="overlay-navbar" id="overlay">
       <nav class="overlay-menu">
         <div class="user-info">
-          <img src={{ URL::to("img/user-image.jpg")}} alt="User Name">
+          <img src="{{ auth()->user()->picture }}" alt="User Name">
           <div>
-            <h4>Samantha David</h4>
+            <h4>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h4>
             <div class="amount-in-account">
-              <span>&#8358;500</span>
+              <span>&#8358; {{ auth()->user()->quiz_funds }}</span>
             </div>
           </div>
         </div>
@@ -78,16 +78,16 @@
       </nav>
     </div>
     <div class="alert alert-success" role="alert">
-        <p>Successfully logged in</p>
+        <p>Welcome back </p>
     </div>
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">
-        <img src={{ URL::to("img/user-image.jpg")}} alt="User Name">
+        <img src="{{ auth()->user()->picture }}" alt="User Name">
         <div>
-          <h4>Samantha David</h4>
+          <h4>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h4>
           <div class="amount-in-account">
-            <span>&#8358;500</span>
+            <span>&#8358; {{ auth()->user()->quiz_funds }}</span>
           </div>
         </div>
       </div>
@@ -281,19 +281,19 @@
             <div class="col-md-8 col-lg-4 mx-auto">
               <div class="custom-card small">
                 <h4>Referrals Bonus</h4>
-                <p>130</p>
+                <p>{{ auth()->user()->referral_bonus }}</p>
               </div>
             </div>
             <div class="col-md-8 col-lg-4 mx-auto">
               <div class="custom-card small">
                 <h4>Quiz Funds</h4>
-                <p>7830</p>
+                <p>{{ auth()->user()->quiz_funds }}</p>
               </div>
             </div>
             <div class="col-md-8 col-lg-4 mx-auto">
               <div class="custom-card small">
                 <h4>Withdrawal</h4>
-                <p>680</p>
+                <p>{{ auth()->user()->withdrawals }}</p>
               </div>
             </div>
           </div>
