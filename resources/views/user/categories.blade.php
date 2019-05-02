@@ -1,20 +1,19 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dashboard | IQ Game</title>
+        <title>Dashboard | IQ Game</title>
 
-  <!--Favicon-->
-  <link rel="icon" href="img/favicon.png" />
+        <!--Favicon-->
+        <link rel="icon" href={{ URL::to("img/favicon.png")}}/>
 
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/media.css" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href={{ URL::to("css/bootstrap.min.css") }} />
+        <link href={{ URL::to("css/style.css") }} rel="stylesheet">
+        <link href={{ URL::to("css/media.css") }} rel="stylesheet">
   <style type="text/css">
     footer {
       position: absolute;
@@ -310,16 +309,16 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
               <div class="support">
-                <img src="img/envelope.svg" alt>
+                <img src={{ URL::to("img/envelope.svg")}} alt>
                 <p>support@gamesoft.com</p>
               </div>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4">
               <div class="social-media-icons">
-                <img src="img/facebook.svg" alt>
-                <img src="img/google-plus.svg" alt>
-                <img src="img/youtube.svg" alt>
-                <img src="img/twitter.svg" alt>
+                <img src={{ URL::to("img/facebook.svg")}} alt>
+                <img src={{ URL::to("img/google-plus.svg")}} alt>
+                <img src={{ URL::to("img/youtube.svg")}} alt>
+                <img src={{ URL::to("img/twitter.svg")}} alt>
               </div>
             </div>
           </div>
@@ -329,8 +328,9 @@
   </section>
 
 
-  <script src="js/jquery-3.3.1.js"></script>
-  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src={{ URL::to("js/jquery-3.3.1.js") }}></script>
+  <script src={{ URL::to("js/bootstrap.min.js") }} type="text/javascript"></script>
+  <script src={{ URL::to("js/scripts.js") }} type="text/javascript"></script>
   <script type="text/javascript">
     $('.button_container').click(function () {
       $(this).toggleClass('active');
@@ -340,3 +340,4 @@
 </body>
 
 </html>
+

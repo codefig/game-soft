@@ -40,7 +40,7 @@ class UserController extends Controller
         return view('user.test');
     }
 
-    public function showCategores(){
+    public function showCategories(){
         return view('user.categories');
     }
 
