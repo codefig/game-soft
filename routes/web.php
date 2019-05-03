@@ -27,6 +27,9 @@ Route::group(['prefix' => '/'], function () {
     Route::get('forgot', 'UserController@showForgotPassword')->name('forgot');
     Route::get('home', 'Auth\UserController@showDashboard')->name('home');
 
+    Route::get('verify/{token}', 'UserController@verifyUser')->name('verify');
+    Route::get('verified', 'UserController@showVerified')->name('verified');
+
 
 });
 

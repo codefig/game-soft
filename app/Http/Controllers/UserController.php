@@ -50,6 +50,7 @@ class UserController extends Controller
 
         $user->save();
 
+        $user->sendVerificationEmail();
 
         Auth::login($user);
 
@@ -79,5 +80,15 @@ class UserController extends Controller
 
     public function showContactUs(){
         return view('contact');
+    }
+
+    public function showVerified(){
+        return view('verified');
+    }
+
+    public function verifyUser(Request $request , $token){
+        $user = User::where('verification_token', $token)->firstOrFail()
+                ->update(['verification_token'=> null]);
+        return redirect()->route('verified');
     }
 }
