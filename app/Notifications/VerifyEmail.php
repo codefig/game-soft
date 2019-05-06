@@ -19,7 +19,7 @@ class VerifyEmail extends Notification
      */
 
     public $user;
-    public function __construct( User $user)
+    public function __construct(User $user)
     {
         $this->user = $user;
     }
@@ -43,10 +43,27 @@ class VerifyEmail extends Notification
      */
     public function toMail($notifiable)
     {
+        // return (new MailMessage)
+        //             ->line('The introduction to the notification.')
+        //             ->action('Please verify your account ', route('verify', $this->user->verification_token))
+        //             ->line('Thank you for joining Gamesoft!');
+
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Please verify your account ', route('verify', $this->user->verification_token))
-                    ->line('Thank you for joining Gamesoft!');
+        ->from('support@weedoo-documents.com', 'WeeDoo-Documents')
+        ->subject('Account Verification')
+        ->action('ACtivate Account ', route('verify', $this->user->verification_token))
+        ->line('Thank you for using our application!')
+        ->markdown('vendor.mail.markdown.message', [
+            'user' => $this->user->name,
+            'url' => route('verify', $this->user->verification_token),
+            'title' => 'Email  Verification',
+            'message' => 'Please click on this link to verify your account',
+            'subcopy' => 'support@WeeDoo-documents.com'
+        ]);
+        // return (new MailMessage)
+        //     ->line('The introduction to the notification.')
+        //     ->action('Please verify your account ', route('verify', $this->user->verification_token))
+        //     ->line('Thank you for joining Gamesoft!');
     }
 
     /**
