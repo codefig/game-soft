@@ -50,7 +50,7 @@ class UserController extends Controller
 
         $user->save();
 
-        $user->sendVerificationEmail();
+        // $user->sendVerificationEmail();
 
         Auth::login($user);
 
