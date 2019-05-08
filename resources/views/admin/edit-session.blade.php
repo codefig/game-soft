@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>View Sessions</title>
+  <title>ADd Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -163,46 +163,70 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>All Sessions</h1>
+        <h1>Edit Lap/Session</h1>
+
+        @if(!count($lap)> 0)
+            <div class="alert alert-danger">Please Create Test Laps before Attempting to Edit Laps/Sessions </div>
+        @endif
         <hr>
-
-
-
-
-
         <div class="container bodycontainer">
-            <table class="table table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Duration</th>
-                    <th scope="col">Start Time</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @if(count($laps) > 0)
-                    @foreach ($laps as $lap)
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>{{ $lap->name }}</td>
-                            <td>{{ $lap->start_time }}</td>
-                            <td>{{ $lap->duration }}</td>
-                            <td>{{ $lap->status }}</td>
-                            <td>
-                                <button class='btn btn-danger'>Delete</button>
-                                <button class="btn btn-info">Activate/Deactivate</button>
-                                <a href="{{ route('admin.session.edit.show', $lap->id) }}" class="btn btn-primary">Edit</a>
-                            </td>
-                          </tr>
-                  @endforeach
-            @endif
 
-                </tbody>
-              </table>
-        </div>
+        @if(count($lap) > 0)
+
+        <form method="post" action="{{ route('admin.session.edit.post', $lap->id) }}">
+
+                <div class="form-group">
+                    <label> Name </label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Category Name" value="{{ $lap->name }}"/>
+                </div>
+
+                <div class="form-group">
+                    <label> Duration </label>
+                    <input type='text' class="form-control" id="description" name="duration" value="{{ $lap->duration }}"/>
+                </div>
+
+                <div class="form-group">
+                    <label> Status </label>
+                    <select  class="form-control" name="status">
+                            <option {{ ($lap->status == 0) ? "selected" : " " }}  value="0">Inactive</option>
+                            <option {{ ($lap->status == 1) ? "selected" : " " }}  value="1">Active</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label> Start Time </label>
+                    <input type="datetime" class="form-control" id="start_time" name="start_time" value="{{ $lap->start_time }}">
+                </div>
+
+                <div class="form-group">
+                    <input type="hidden" name="_token" value="{{ Session::token() }}" />
+                    <button type="submit" name="submitBtn" class="btn btn-info"> Update Category</button>
+                </div>
+            </div>
+        </form>
+        @endif
+
+        <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
+              </div>
+
+
+              <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
+                  {{ Session::get('success') }}
+              </div>
+              <div class="alert alert-danger" style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
+                  {{ Session::get('error') }}
+              </div>
+
 
       </div>
       <!-- /.container-fluid -->

@@ -81,7 +81,7 @@
   <section class="dashboard">
     <div class="dashboard-sidenav">
       <div class="user-info">
-        <img src=src={{ URL::to("img/user-image.jpg")}} alt="User Name">
+        <img src={{ URL::to("img/user-image.jpg")}} alt="User Name">
         <div>
           <h4>Samantha David</h4>
           <div class="amount-in-account">
@@ -187,7 +187,6 @@
 
   <script src={{ URL::to("js/jquery-3.3.1.js") }}></script>
   <script src={{ URL::to("js/bootstrap.min.js") }} type="text/javascript"></script>
-  <script src={{ URL::to("js/scripts.js") }} type="text/javascript"></script>
 
   <script>
     $('.button_container').click(function () {

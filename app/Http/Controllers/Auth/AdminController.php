@@ -12,6 +12,7 @@ use App\Category;
 use Illuminate\Filesystem\Cache;
 use App\Stage;
 use App\Question;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -53,6 +54,24 @@ class AdminController extends Controller
             Session::flash('success', "Test Session created successfully !");
             return redirect()->back();
 
+    }
+
+    public function showEditSession(Request $request, $id){
+        $lap = Lap::find($id);
+        return view('admin.edit-session', compact('lap'));
+
+    }
+
+    public function postEditSession(Request $request, $id){
+        $lap = Lap::find($id);
+        //check if the current lap is meant to be the activec one
+        if($request->status == 1){
+
+            DB::update('update laps set status = 0 where id != ?', ["$id"]);
+        }
+        $lap->update($request->all());
+        Session::flash('success', "Test Lap  updated successfully !");
+        return redirect()->back();
     }
 
     public function viewAllSession(Request $request){

@@ -163,7 +163,7 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>View Categories</h1>
+        <h1>View All Stages</h1>
         <hr>
         <p>Shows all Stages</p>
 
