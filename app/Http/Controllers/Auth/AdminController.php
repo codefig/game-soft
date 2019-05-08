@@ -74,6 +74,13 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function deleteSession(Request $request, $id){
+        $lap = Lap::findOrFail($id);
+        $lap->delete();
+        Session::flash('success', "Lap deleted successfully !");
+        return redirect()->back();
+    }
+
     public function viewAllSession(Request $request){
 
         $laps = Lap::all();

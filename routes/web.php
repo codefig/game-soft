@@ -66,6 +66,7 @@ Route::group(['prefix' => 'admin/'], function () {
     Route::post('sessions/create', 'Auth\AdminController@postCreateSession')->name('admin.session.post');
     Route::get('sessions/edit/{id}', 'Auth\AdminController@showEditSession')->name('admin.session.edit.show');
     Route::post('sessions/edit/{id}', 'Auth\AdminController@postEditSession')->name('admin.session.edit.post');
+    Route::get('sessions/delete/{id}', 'Auth\AdminController@deleteSession')->name('admin.session.delete');
 
     //Category routes
     Route::get('category/create', 'Auth\AdminController@viewCreateCategory')->name('admin.category.create');
