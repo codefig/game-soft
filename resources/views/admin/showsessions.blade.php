@@ -190,10 +190,9 @@
                             <td>{{ $lap->name }}</td>
                             <td>{{ $lap->start_time }}</td>
                             <td>{{ $lap->duration }}</td>
-                            <td>{{ $lap->status }}</td>
+                            <td>{{ ($lap->status == 1) ? "Active" : "Inactive"}}</td>
                             <td>
                                 <button class='btn btn-danger'>Delete</button>
-                                <button class="btn btn-info">Activate/Deactivate</button>
                                 <a href="{{ route('admin.session.edit.show', $lap->id) }}" class="btn btn-primary">Edit</a>
                             </td>
                           </tr>
