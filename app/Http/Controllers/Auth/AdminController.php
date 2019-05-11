@@ -226,12 +226,12 @@ class AdminController extends Controller
 
     public function viewCreateQuestion(){
         $stages = Stage::all();
-        return view('admin.add-question', compact('stages'));
+        $categories = Category::all();
+        return view('admin.add-question', compact('stages', 'categories'));
     }
 
     public function postCreateQuestion(Request $request){
         // return "this is the post create question";
-
         $request->validate([
             'content' => 'required',
             'a' => 'required',
@@ -239,7 +239,7 @@ class AdminController extends Controller
             'c' => 'required',
             'd' => 'required',
             'correct' => 'required',
-            'stage_id' => 'required|numeric',
+            'stage_id' => 'required',
         ]);
 
         $question = new Question();
@@ -262,6 +262,44 @@ class AdminController extends Controller
         return 'this is the veiw all questions ';
     }
 
+
+    public function showSelectLapQuestionToView(){
+        $laps = Lap::all();
+
+        return view('admin.view-question-lap', compact('laps'));
+    }
+
+    public function postSelectLapCategoryQuestionToView(Request $request){
+        $categories = Category::where('session_id', $request->lap_id)->get();
+        if(!$categories) {
+            Session::flash('error ', "There are no added categories for chosen lap !");
+            return redirect()->back();
+        }
+        $lap_id = $request->lap_id;
+       return view('admin.view-question-category', compact('categories', 'lap_id'));
+    }
+
+    public function postSelectLapCategoryStageQuestionToView(Request $request){
+        $stages = Stage::where('category_id', $request->category_id)
+                            ->where('lap_id', $request->lap_id)
+                            ->get();
+        if(!$stages) {
+            Session::flash('error ', "There are no added stages for chosen category !");
+            return redirect()->back();
+        }
+        return view('admin.view-question-stage', compact('stages'));
+    }
+
+    public function postShowQuestionsByStage(Request $request){
+        $questions = Question::where('stage_id', $request->stage_id)->get();
+        if(!$questions){
+            Session::flash('error ', "There are no added questions for selected stage !");
+            return redirect()->back();
+        }
+        return view('admin.showquestions', compact('questions'));
+
+    }
+
     public function selectQuestionToView(){
         $laps = Lap::all();
         $categories = Category::all();
@@ -278,20 +316,56 @@ class AdminController extends Controller
             'category_id' => 'required|numeric',
         ]);
 
-        // $stage = Stage::where('lap_id', $req)
-        echo "lap id : ". $request->lap_id . " category_id  :". $request->category_id;
+        // return $request->all();
+
+        //Get the correct stage;
+        $stage = Stage::where('lap_id', '=', $request->lap_id)
+                        ->where('id', '=', $request->stage_id)
+                        ->where('category_id', '=', $request->category_id)
+                        ->first();
+        if($stage){
+            $questions = Question::where('stage_id', $request->stage_id)->get();
+            return $questions;
+        }
+        else{
+            Session::flash('error', "There are no questions for the selected session!");
+            return redirect()->back();
+        }
+
+
 
     }
-    public function showEditQuestion(){
-        return "this is the eid tquestion function";
+    public function showEditQuestion(Request $request, $id){
+        $question = Question::find($id);
+        return view('admin.editquestion', compact('question'));
+
     }
 
-    public function postEditQuestion(){
-        return "this is the edi tquestion submit funciton";
+    public function postEditQuestion(Request $request){
+       $question = Question::find($request->id);
+       $question->update($request->all());
+       if(!$question){
+           Session::flash('error', "There is no question with that Id");
+           return redirect()->bac();
+       }
+       Session::flash('success', "QUestion Updated updated!");
+       return redirect()->back();
+
     }
 
-    public function deleteQuestion(){
-        return "this is the delete question function";
+    public function deleteQuestion(Request $request, $id){
+
+        $question = Question::find($id);
+
+
+        if(!$question){
+            Session::flash('error', "Question with that id, does not exist!");
+            return redirect()->route("admin.question.selectLap.show");
+        }
+        $question->delete();
+        Session::flash('success', "Question deleted Successfully!");
+        return redirect()->route("admin.question.selectLap.show");
+
     }
 
 

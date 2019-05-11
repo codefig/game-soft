@@ -200,12 +200,12 @@
 
 
         <div class="form-group">
-            <label> Stage (Category) </label>
+            <label> Stage (Category) (Lap)</label>
             <select  class="form-control" name="stage_id">
 
                 @if(count($stages) > 0)
                     @foreach($stages as $stage)
-                    <option value="{{ $stage->id }}"> {{ $stage->name }} ({{ $stage->category->name }})</option>
+                    <option value="{{ $stage->id }}"> {{ $stage->name }} [{{ $stage->category->name }}] ({{ $stage->category->lap->name }})</option>
                     @endforeach
                 @endif
 

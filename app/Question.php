@@ -17,4 +17,8 @@ class Question extends Model
         'd',
         'correct'
     ];
+
+    public function stage(){
+        return $this->belongsTo(Stage::class);
+    }
 }

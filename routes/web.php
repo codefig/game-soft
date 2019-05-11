@@ -92,6 +92,11 @@ Route::group(['prefix' => 'admin/'], function () {
     Route::post('question/edit/{id}', 'Auth\AdminController@postEditQuestion')->name('admin.question.edit.post');
     Route::get('question/delete/{id}', 'Auth\AdminController@deleteQuestion')->name('admin.question.delete');
 
-    Route::get('question/showall/select', 'Auth\AdminController@selectQuestionToView')->name('admin.question.select');
-    Route::post('question/showall/select', 'Auth\AdminController@postSelectQuestionToView')->name('admin.question.select.post');
+
+    Route::get('question/show', 'Auth\AdminController@showSelectLapQuestionToView')->name('admin.question.selectLap.show');
+    Route::post('question/show', 'Auth\AdminController@postSelectLapCategoryQuestionToView')->name('admin.question.lap.post');
+    Route::post('question/show/lap', 'Auth\AdminController@postSelectLapCategoryStageQuestionToView')->name('admin.question.selectCategory.post');
+    Route::post('question/show/all', 'Auth\AdminController@postShowQuestionsByStage')->name('admin.question.show.post');
+    // Route::get('question/showall/select', 'Auth\AdminController@selectQuestionToView')->name('admin.question.select');
+    // Route::post('question/showall/select', 'Auth\AdminController@postSelectQuestionToView')->name('admin.question.select.post');
 });

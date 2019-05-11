@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Blank Page</title>
+  <title>View Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -163,77 +163,68 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Show All Questions </h1>
+        <h1>All Sessions</h1>
         <hr>
 
-        <form method="post" action="{{ route('admin.question.select.post') }}">
 
 
-        <div class="form-group">
-                <label> Lap  </label>
-                <select  class="form-control" name="lap_id">
-                    @if(count($laps) > 0)
-                        @foreach($laps as $lap)
-                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
-                        @endforeach
-                    @endif
 
-                </select>
-        </div>
 
-        <div class="form-group">
-            <label> Category  </label>
-            <select  class="form-control" name="category_id">
-                @if(count($categories) > 0)
-                    @foreach($categories as $category)
-                    <option value="{{ $category->id }}"> {{ $category->name }} </option>
-                    @endforeach
-                @endif
+        <div class="container bodycontainer">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Option A</th>
+                    <th scope="col">Option B</th>
+                    <th scope="col">Option C</th>
+                    <th scope="col">Option D</th>
+                    <th scope="col">Answer </th>
+                    <th scope="col">Start Time</th>
 
-            </select>
-    </div>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @if(count($questions) > 0)
+                    @foreach ($questions as $question)
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>{{ $question->content }}</td>
+                            <td>{{ $question->a}}</td>
+                            <td>{{ $question->b }}</td>
+                            <td>{{ $question->c }}</td>
+                            <td>{{ $question->d }}</td>
+                            <td>{{ $question->correct }}</td>
+                            <td>
 
-    <div class="form-group">
-        <label> Stage  </label>
-        <select  class="form-control" name="stage_id">
-            @if(count($stages) > 0)
-                @foreach($stages as $stage)
-                <option value="{{ $stage->id }}"> {{ $stage->name }} [{{ $stage->category->name }}] </option>
-                @endforeach
+                                <a href="{{ route('admin.question.delete', $question->id) }}"class='btn btn-danger'>Delete</a>
+                                <a href="{{ route('admin.question.edit.show', $question->id) }}" class="btn btn-primary">Edit</a>
+                            </td>
+                          </tr>
+                  @endforeach
+                </tbody>
+
+                  @else
+                      <div class="form-group">
+                      <span class="alert alert-danger">Sorry There are no questions for this Stage </span>
+                    </div>
             @endif
 
-        </select>
-</div>
+              </table>
 
 
-            <div class="form-group">
-                <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" class="btn btn-primary"> View Questions </button>
-            </div>
-
-        </form>
-
-        <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
-                @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                  <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                  </ul>
-                </div>
-                @endif
-        </div>
 
 
               <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
-                  {{ Session::get('success') }}
-              </div>
-
-              <div class="alert alert-danger" style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
+                {{ Session::get('success') }}
+            </div>
+            <div class="alert alert-danger" style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
                 {{ Session::get('error') }}
             </div>
+        </div>
+
       </div>
       <!-- /.container-fluid -->
 
@@ -247,9 +238,6 @@
       </footer>
 
     </div>
-
-
-  </div>
     <!-- /.content-wrapper -->
 
   </div>

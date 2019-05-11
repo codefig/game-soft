@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Blank Page</title>
+  <title>ADd Sessions</title>
 
   <!-- Custom fonts for this template-->
 
@@ -163,55 +163,54 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Show All Questions </h1>
+        <h1>Edit Question</h1>
+
+
         <hr>
+        <div class="container bodycontainer">
 
-        <form method="post" action="{{ route('admin.question.select.post') }}">
+        @if(count($question) > 0)
 
+        <form method="post" action="{{ route('admin.question.edit.post', $question->id) }}">
 
-        <div class="form-group">
-                <label> Lap  </label>
-                <select  class="form-control" name="lap_id">
-                    @if(count($laps) > 0)
-                        @foreach($laps as $lap)
-                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
-                        @endforeach
-                    @endif
+                <div class="form-group">
+                    <label> Content </label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Question Content" value="{{ $question->content }}"/>
+                </div>
 
-                </select>
-        </div>
+                <div class="form-group">
+                    <label> Option A </label>
+                    <input type="text" class="form-control" id="a" name="a" value="{{ $question->a }}"/>
+                </div>
 
-        <div class="form-group">
-            <label> Category  </label>
-            <select  class="form-control" name="category_id">
-                @if(count($categories) > 0)
-                    @foreach($categories as $category)
-                    <option value="{{ $category->id }}"> {{ $category->name }} </option>
-                    @endforeach
-                @endif
+                <div class="form-group">
+                    <label> Option B </label>
+                    <input type="text" class="form-control" id="b" nbme="b" value="{{ $question->b }}"/>
+                </div>
 
-            </select>
-    </div>
+                <div class="form-group">
+                    <label> Option C </label>
+                    <input type="text" class="form-control" id="c" name="c" value="{{ $question->c }}"/>
+                </div>
 
-    <div class="form-group">
-        <label> Stage  </label>
-        <select  class="form-control" name="stage_id">
-            @if(count($stages) > 0)
-                @foreach($stages as $stage)
-                <option value="{{ $stage->id }}"> {{ $stage->name }} [{{ $stage->category->name }}] </option>
-                @endforeach
-            @endif
+                <div class="form-group">
+                    <label> Option D </label>
+                    <input type="text" class="form-control" id="d" name="d" value="{{ $question->d }}"/>
+                </div>
 
-        </select>
-</div>
+                <div class="form-group">
+                    <label> Answer</label>
+                    <input type="text" class="form-control" id="correct" name="correct" value="{{ $question->correct }}"/>
+                </div>
 
-
-            <div class="form-group">
-                <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" class="btn btn-primary"> View Questions </button>
+                <div class="form-group">
+                    <input type="hidden" name="id" value={{ $question->id }} />
+                    <input type="hidden" name="_token" value="{{ Session::token() }}" />
+                    <button type="submit" name="submitBtn" class="btn btn-info"> Update Question</button>
+                </div>
             </div>
-
         </form>
+        @endif
 
         <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
                 @if (count($errors) > 0)
@@ -224,16 +223,17 @@
                   </ul>
                 </div>
                 @endif
-        </div>
+              </div>
 
 
               <div class="alert alert-success" style="visibility: {{ Session::has('success') ? 'visible' : 'hidden' }}">
                   {{ Session::get('success') }}
               </div>
-
               <div class="alert alert-danger" style="visibility: {{ Session::has('error') ? 'visible' : 'hidden' }}">
-                {{ Session::get('error') }}
-            </div>
+                  {{ Session::get('error') }}
+              </div>
+
+
       </div>
       <!-- /.container-fluid -->
 
@@ -247,9 +247,6 @@
       </footer>
 
     </div>
-
-
-  </div>
     <!-- /.content-wrapper -->
 
   </div>

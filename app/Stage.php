@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Symfony\Component\Console\Question\Question;
 
 class Stage extends Model
 {
@@ -14,6 +15,8 @@ class Stage extends Model
         'category_id',
     ];
 
+
+
     public function lap(){
         return $this->belongsTo(Lap::class);
     }
@@ -21,4 +24,6 @@ class Stage extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+
+
 }

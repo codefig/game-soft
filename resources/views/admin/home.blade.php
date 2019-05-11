@@ -155,7 +155,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.question.select') }}">
+        <a class="nav-link" href="{{ route('admin.question.selectLap.show') }}">
           <i class="fas fa-fw fa-table"></i>
           <span>View Questions </span></a>
       </li>
@@ -228,6 +228,9 @@
   <!-- Core plugin JavaScript-->
   <script src={{ URL::to("vendor/vendor/jquery-easing/jquery.easing.min.js") }}></script>
 
+  <script>
+
+  </script>
 
   <!-- Custom scripts for all pages-->
   <script src={{ URL::to("vendor/js/sb-admin.min.js") }}></script>

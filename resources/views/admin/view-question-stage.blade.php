@@ -163,18 +163,17 @@
         </ol>
 
         <!-- Page Content -->
-        <h1>Show All Questions </h1>
+        <h1>Select Desired Stage </h1>
         <hr>
 
-        <form method="post" action="{{ route('admin.question.select.post') }}">
-
-
+        <form method="post" action="{{ route('admin.question.show.post') }}">
         <div class="form-group">
-                <label> Lap  </label>
-                <select  class="form-control" name="lap_id">
-                    @if(count($laps) > 0)
-                        @foreach($laps as $lap)
-                        <option value="{{ $lap->id }}"> {{ $lap->name }} </option>
+                <label> Category  </label>
+                <select  id="stageSelect" class="form-control" name="stage_id">
+                    <option value="0">Select Stage </option>
+                    @if(count($stages) > 0)
+                        @foreach($stages as $stage)
+                        <option value="{{ $stage->id }}"> {{ $stage->name }} </option>
                         @endforeach
                     @endif
 
@@ -182,36 +181,11 @@
         </div>
 
         <div class="form-group">
-            <label> Category  </label>
-            <select  class="form-control" name="category_id">
-                @if(count($categories) > 0)
-                    @foreach($categories as $category)
-                    <option value="{{ $category->id }}"> {{ $category->name }} </option>
-                    @endforeach
-                @endif
-
-            </select>
-    </div>
-
-    <div class="form-group">
-        <label> Stage  </label>
-        <select  class="form-control" name="stage_id">
-            @if(count($stages) > 0)
-                @foreach($stages as $stage)
-                <option value="{{ $stage->id }}"> {{ $stage->name }} [{{ $stage->category->name }}] </option>
-                @endforeach
-            @endif
-
-        </select>
-</div>
-
-
-            <div class="form-group">
                 <input type="hidden" name="_token" value="{{ Session::token() }}" />
-                <button type="submit" class="btn btn-primary"> View Questions </button>
-            </div>
+                <button id="chooseLapBtn" type="submit" class="btn btn-primary"> View Questions </button>
+        </div>
 
-        </form>
+    </form>
 
         <div class='alert alert-danger' style="visibility: {{ (count($errors) > 0) ? 'visible' : 'hidden' }}">
                 @if (count($errors) > 0)
@@ -279,8 +253,6 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <!-- Bootstrap core JavaScript-->
   <script src={{ URL::to("vendor/vendor/jquery/jquery.min.js") }}></script>
   <script src={{ URL::to("vendor/vendor/bootstrap/js/bootstrap.bundle.min.js") }}></script>
 
@@ -288,9 +260,17 @@
   <script src={{ URL::to("vendor/vendor/jquery-easing/jquery.easing.min.js") }}></script>
 
 
+  <script>
+    $('document').ready(function(){
+        console.log("This is the console.");
+    })
+
+    $('#stageSelect').on('change', function(){
+        console.log("Value changed");
+    })
+  </script>
   <!-- Custom scripts for all pages-->
   <script src={{ URL::to("vendor/js/sb-admin.min.js") }}></script>
-
 </body>
 
 </html>

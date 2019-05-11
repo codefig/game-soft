@@ -202,7 +202,7 @@
 
                     @if(count($categories) > 0)
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}"> {{ $category->name }} </option>
+                        <option value="{{ $category->id }}"> {{ $category->name }} [{{ $category->lap->name }}] </option>
                         @endforeach
                     @endif
 
