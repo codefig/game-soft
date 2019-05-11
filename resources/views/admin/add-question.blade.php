@@ -198,16 +198,18 @@
             <input type="text" name="correct" id="correct" class="form-control" placeholder="a, b , c, or d"/>
         </div>
 
-        <div class="form-group">
-                <label> Stage  </label>
-                <select  class="form-control" name="stage_id">
-                    @if(count($stages) > 0)
-                        @foreach($stages as $stage)
-                        <option value="{{ $stage->id }}"> {{ $stage->name }} </option>
-                        @endforeach
-                    @endif
 
-                </select>
+        <div class="form-group">
+            <label> Stage (Category) </label>
+            <select  class="form-control" name="stage_id">
+
+                @if(count($stages) > 0)
+                    @foreach($stages as $stage)
+                    <option value="{{ $stage->id }}"> {{ $stage->name }} ({{ $stage->category->name }})</option>
+                    @endforeach
+                @endif
+
+            </select>
         </div>
 
 
